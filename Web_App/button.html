@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>main page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="main.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <style>
+  #resizable { width: 150px; height: 150px; padding: 0.5em; text-align: center; display: table-cell; vertical-align:middle;}
+  #resizable h3 { text-align: center; margin: 0; }
+
+  #myimg{ max-width: 100%; max-height: 100%; vertical-align: middle;}
+  </style>
+  <script>
+  $(function() {
+    $( "#resizable" ).resizable();
+  });
+  </script>
+</head>
+<body>
+<div data-role="page" id="pageone">
+  <div data-role="header">
+<a href="#anylink" class="ui-btn ui-corner-all">HOME</a>
+    <h1>Home</h1>
+	<div class="ui-btn-right">
+<select data-native-menu="false" data-mini="true" data-inline="true" data-icon="gear"  data-iconpos="notext" >
+<option value="0">Login</option>
+<option value="1">Change PS</option>
+<option value="2">Setting</option>
+</select>
+</div>
+  </div>
+  <div data-role="content" id="content">
+    <div class="btnContainer btmBtn" style="
+    padding-top: 10%;
+">  
+        <a data-role="button" data-theme="c" id="button" href="" style="
+
+    width: 50px;
+    font-size: 8em;
+	margin:auto;
+">+</a>
+    </div>
+  </div>
+
+  <div data-role="footer" id="footer">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="home">List</a></li>
+        <li><a href="#" data-icon="info">Lib</a></li>
+        <li><a href="#" data-icon="grid">Cal</a></li>
+      </ul>
+    </div>
+  </div>
+</div> 
+</body>
+</html>
