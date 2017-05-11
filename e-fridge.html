@@ -444,131 +444,153 @@
 		</div>
 	  </div>
 
-	  <div data-role="main" class="ui-content">
-		<div data-role="collapsible-set">
-			<div data-role="collapsible">
-				<h4>Meat</h4>
-				<ul data-role="listview">
-					<li data-icon="plus"><a href="#add">Beef</a></li>
-					<li data-icon="plus"><a href="#add">Chicken</a></li>
-					<li data-icon="plus"><a href="#">Lamb</a></li>
-					<li data-icon="plus"><a href="#">Turkey</a></li>
-					<li data-icon="plus"><a href="#">Pork</a></li>
-					<li data-icon="plus"><a href="#">Duck</a></li>
-					<li data-icon="plus"><a href="#">Goose</a></li>
-					<li data-icon="plus"><a href="#new_item">......</a></li>
-				</ul>
-			</div>
-			<div data-role="collapsible">
-				<h4>Vegetable</h4>
-				<ul data-role="listview">
-					<li><a href="#">Potato</a></li>
-					<li><a href="#">Spinach</a></li>
-					<li><a href="#">Broccoli</a></li>
-					<li><a href="#">Cabbage</a></li>
-					<li><a href="#">Carrot</a></li>
-					<li><a href="#">Onion</a></li>
-					<li><a href="#">Tomato</a></li>
-					<li><a href="#">Pea</a></li>
-					<li><a href="#">Cauliflower</a></li>
-					<li><a href="#">Lettuce</a></li>
-					<li><a href="#">Maize</a></li>
-					<li><a href="#">Cucumber</a></li>
-					<li><a href="#">Celery</a></li>
-					<li><a href="#">Kale</a></li>
-					<li><a href="#">Garden asparagus</a></li>
-					<li><a href="#">Turnip</a></li>
-					<li><a href="#">Eggplant</a></li>
-					<li><a href="#">Garlic</a></li>
-					<li><a href="#">Pepper</a></li>
-					<li><a href="#">Leek</a></li>
-					<li><a href="#">Chili pepper</a></li>
-					<li><a href="#">Daikon</a></li>
-					<li><a href="#">Bamboo</a></li>
-					<li><a href="#">Squash</a></li>
-					<li><a href="#">Bean</a></li>
-					<li><a href="#">Scallion</a></li>
-				</ul>
-			</div>
-			<div data-role="collapsible">
-				<h4>Seafood</h4>
-				<ul data-role="listview">
-					<li><a href="#">Salmon</a></li>
-					<li><a href="#">Tuna</a></li>
-					<li><a href="#">Lobster</a></li>
-					<li><a href="#">Crabs</a></li>
-					<li><a href="#">Shrimps</a></li>
-					<li><a href="#">Cod</a></li>
-					<li><a href="#">Flounder</a></li>
-					<li><a href="#">Catfish</a></li>
-					<li><a href="#">Scallop</a></li>
-					<li><a href="#">Fomfret</a></li>
-				</ul>
-			</div>
-			<div data-role="collapsible">
-				<h4>Fruit</h4>
-				<ul data-role="listview">
-					<li><a href="#">Apple</a></li>
-					<li><a href="#">Banana</a></li>
-					<li><a href="#">Strawberry</a></li>
-					<li><a href="#">Orange</a></li>
-					<li><a href="#">Grape</a></li>
-					<li><a href="#">Pear</a></li>
-					<li><a href="#">Peach</a></li>
-					<li><a href="#">Cherry</a></li>
-					<li><a href="#">Pineapple</a></li>
-					<li><a href="#">Grapefruit</a></li>
-					<li><a href="#">Mango</a></li>
-					<li><a href="#">Lemon</a></li>
-					<li><a href="#">Watermelon</a></li>
-					<li><a href="#">Kiwifruit</a></li>
-					<li><a href="#">Avocado</a></li>
-					<li><a href="#">Papaya</a></li>
-					<li><a href="#">Berry</a></li>
-					<li><a href="#">Blackberry</a></li>
-					<li><a href="#">Apricot</a></li>
-					<li><a href="#">Cantaloupe</a></li>
-					<li><a href="#">Coconut</a></li>
-					<li><a href="#">Tangerine</a></li>
-					<li><a href="#">Pomegranate</a></li>
-					<li><a href="#">Lychee</a></li>
-					<li><a href="#">Olive</a></li>
-					<li><a href="#">Durian</a></li>
-					<li><a href="#">Prune</a></li>
-					<li><a href="#">Purple mangosteen</a></li>
-					<li><a href="#">Pitaya</a></li>
-					<li><a href="#">Longan</a></li>
-					<li><a href="#">Jujube</a></li>
-					<li><a href="#">Raspberry</a></li>
-				</ul>
-			</div>
-			<div data-role="collapsible">
-				<h4>Dairy</h4>
-				<ul data-role="listview">
-					<li><a href="#">Beef</a></li>
-					<li><a href="#">Chicken</a></li>
-					<li><a href="#">Lamb</a></li>
-					<li><a href="#">Turkey</a></li>
-					<li><a href="#">Pork</a></li>
-					<li><a href="#">Duck</a></li>
-					<li><a href="#">Goose</a></li>
-				</ul>
-			</div>
-			<div data-role="collapsible">
-				<h4>Others</h4>
-				<ul data-role="listview">
-					<li><a href="#">Beef</a></li>
-					<li><a href="#">Chicken</a></li>
-					<li><a href="#">Lamb</a></li>
-					<li><a href="#">Turkey</a></li>
-					<li><a href="#">Pork</a></li>
-					<li><a href="#">Duck</a></li>
-					<li><a href="#">Goose</a></li>
-				</ul>
-			</div>
+  <div data-role="main" class="ui-content">
+	<div data-role="collapsible-set">
+		<div data-role="collapsible">
+			<h4>Meat</h4>
+			<ul data-role="listview" name="food_list">
+				<li><a href="#">Beef</a></li>
+				<li><a href="#">Chicken</a></li>
+				<li><a href="#">Lamb</a></li>
+				<li><a href="#">Turkey</a></li>
+				<li><a href="#">Pork</a></li>
+				<li><a href="#">Duck</a></li>
+				<li><a href="#">Goose</a></li>
+				<li data-icon="plus"><a href="#">+</a></li>
+			</ul>
 		</div>
-		
-	  </div>
+		<div data-role="collapsible">
+			<h4>Vegetable</h4>
+			<ul data-role="listview" name="food_list">
+				<li><a href="#">Potato</a></li>
+				<li><a href="#">Spinach</a></li>
+				<li><a href="#">Broccoli</a></li>
+				<li><a href="#">Cabbage</a></li>
+				<li><a href="#">Carrot</a></li>
+				<li><a href="#">Onion</a></li>
+				<li><a href="#">Tomato</a></li>
+				<li><a href="#">Pea</a></li>
+				<li><a href="#">Cauliflower</a></li>
+				<li><a href="#">Lettuce</a></li>
+				<li><a href="#">Maize</a></li>
+				<li><a href="#">Cucumber</a></li>
+				<li><a href="#">Celery</a></li>
+				<li><a href="#">Kale</a></li>
+				<li><a href="#">Garden asparagus</a></li>
+				<li><a href="#">Turnip</a></li>
+				<li><a href="#">Eggplant</a></li>
+				<li><a href="#">Garlic</a></li>
+				<li><a href="#">Pepper</a></li>
+				<li><a href="#">Leek</a></li>
+				<li><a href="#">Chili pepper</a></li>
+				<li><a href="#">Daikon</a></li>
+				<li><a href="#">Bamboo</a></li>
+				<li><a href="#">Squash</a></li>
+				<li><a href="#">Bean</a></li>
+				<li><a href="#">Scallion</a></li>
+				<li data-icon="plus"><a href="#">+</a></li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h4>Seafood</h4>
+			<ul data-role="listview" name="food_list">
+				<li><a href="#">Salmon</a></li>
+				<li><a href="#">Tuna</a></li>
+				<li><a href="#">Lobster</a></li>
+				<li><a href="#">Crabs</a></li>
+				<li><a href="#">Shrimps</a></li>
+				<li><a href="#">Cod</a></li>
+				<li><a href="#">Flounder</a></li>
+				<li><a href="#">Catfish</a></li>
+				<li><a href="#">Scallop</a></li>
+				<li><a href="#">Fomfret</a></li>
+				<li data-icon="plus"><a href="#">+</a></li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h4>Fruit</h4>
+			<ul data-role="listview" name="food_list">
+				<li><a href="#">Apple</a></li>
+				<li><a href="#">Banana</a></li>
+				<li><a href="#">Strawberry</a></li>
+				<li><a href="#">Orange</a></li>
+				<li><a href="#">Grape</a></li>
+				<li><a href="#">Pear</a></li>
+				<li><a href="#">Peach</a></li>
+				<li><a href="#">Cherry</a></li>
+				<li><a href="#">Pineapple</a></li>
+				<li><a href="#">Grapefruit</a></li>
+				<li><a href="#">Mango</a></li>
+				<li><a href="#">Lemon</a></li>
+				<li><a href="#">Watermelon</a></li>
+				<li><a href="#">Kiwifruit</a></li>
+				<li><a href="#">Avocado</a></li>
+				<li><a href="#">Papaya</a></li>
+				<li><a href="#">Berry</a></li>
+				<li><a href="#">Blackberry</a></li>
+				<li><a href="#">Apricot</a></li>
+				<li><a href="#">Cantaloupe</a></li>
+				<li><a href="#">Coconut</a></li>
+				<li><a href="#">Tangerine</a></li>
+				<li><a href="#">Pomegranate</a></li>
+				<li><a href="#">Lychee</a></li>
+				<li><a href="#">Olive</a></li>
+				<li><a href="#">Durian</a></li>
+				<li><a href="#">Prune</a></li>
+				<li><a href="#">Purple mangosteen</a></li>
+				<li><a href="#">Pitaya</a></li>
+				<li><a href="#">Longan</a></li>
+				<li><a href="#">Jujube</a></li>
+				<li><a href="#">Raspberry</a></li>
+				<li data-icon="plus"><a href="#">+</a></li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h4>Dairy</h4>
+			<ul data-role="listview" name="food_list">
+				<li><a href="#">Beef</a></li>
+				<li><a href="#">Chicken</a></li>
+				<li><a href="#">Lamb</a></li>
+				<li><a href="#">Turkey</a></li>
+				<li><a href="#">Pork</a></li>
+				<li><a href="#">Duck</a></li>
+				<li><a href="#">Goose</a></li>
+				<li data-icon="plus"><a href="#">+</a></li>
+			</ul>
+		</div>
+		<div data-role="collapsible">
+			<h4>Others</h4>
+			<ul data-role="listview" name="food_list">
+				<li><a href="#">Beef</a></li>
+				<li><a href="#">Chicken</a></li>
+				<li><a href="#">Lamb</a></li>
+				<li><a href="#">Turkey</a></li>
+				<li><a href="#">Pork</a></li>
+				<li><a href="#">Duck</a></li>
+				<li><a href="#">Goose</a></li>
+				<li data-icon="plus"><a href="#">+</a></li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		var arr1 = document.getElementsByName("food_list");
+
+		for (j = 0; j < arr1.length; j++) {
+		var arr2 = arr1[j].getElementsByTagName("a");
+		for (i = 0; i < arr2.length - 1; i++) {
+		arr2[i].href = "#add";
+		arr2[i].class="ui-btn ui-btn-icon-right ui-icon-plus ui-btn-icon-notext"}
+		arr2[i].href = "#new_item";}
+
+
+		//var arr3 = arr1[j].getElementsByTagName("li");
+		//for (let k = 0; k < arr3.length; k++) {
+		//arr3[k].data-icon = "plus";}}
+		//alert("arr3.length");
+		// uncaught referenceError: Invalid left-hand side in assigment
+		// uncaught typeError: Cannot set property 'href' of undefined
+	</script>
+  </div>
 
 	  <div data-role="footer" data-position="fixed" id="footer" style="position: fixed; opacity: initial;">
 		<div data-role="navbar">
