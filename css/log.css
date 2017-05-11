@@ -1,0 +1,40 @@
+.ui-content{text-align:center;
+margin:0 auto;
+}
+.ui-content label{text-align:left;
+font-size:12px;
+font-weight:bold}
+.ui-content p{text-align:left;
+font-size:14px;
+font-weight:bold}
+.bottons{width:50%;
+margin:0 auto;
+font-size:5px;
+padding-top:10px;}
+a {border-radius:10px}
+#log{height:100%}
+.guest{font-size:10px;}
+.ui-header {font-size:10px;}
+.ui-page{background:linear-gradient(rgb(157,217,234),white);
+}
+#username{width:20px;}
+.ui-checkbox{width:50%;
+}
+#fc {text-align:right;
+float:right;
+padding-top:25px;}
+.ui-checkbox label{
+    background: rgba(255,255,255,0) !important;
+	border:0;
+}
+
+#pc1{width:130%;
+	margin-left:48%;
+	transform:translateX(-50%);}
+	#pc2{width:130%;
+	margin-left:48%;
+	transform:translateX(-50%)};}
+	
+
+
+	
