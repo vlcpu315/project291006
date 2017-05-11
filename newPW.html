@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Set New Password</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/settingMenu.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<style>
+	#resizable { width: 150px; height: 150px; padding: 0.5em; text-align: center; display: table-cell; vertical-align:middle;}
+	#resizable h3 { text-align: center; margin: 0; }
+	.ui-page { 
+    background: linear-gradient(rgb(157,217,234),white);
+	}
+      #button {width:1% !important;
+                margin: auto;
+               border-radius: 0 !important;
+    }
+	#myimg{ max-width: 100%; max-height: 100%; vertical-align: middle;}
+	</style>
+  <script>
+  $(function() {
+    $( "#resizable" ).resizable();
+  });
+  </script>
+</head>
+<body>
+
+<div data-role="page" id="newPW">
+		<div data-role="header">
+		<a href="#anylink" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
+		<h1>New Password</h1>
+		<a href="#popupMenu" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+		<div data-role="popup" id="popupMenu">
+			<ul data-role="listview" data-inset="true" style="min-width:210px;">
+				<li><a href="log.html" rel="external">Log Out</a></li>
+				<li><a href="confirmPW.html" rel="external">Change Password</a></li>
+				<li><a href="settings.html" rel="external">Settings</a></li>
+				<li><a href="contactUs.html" rel="external">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+  <div data-role="content" id="content">
+	<div class="newPW">
+		  <br/>
+		  	<h2>Enter your new password</h2>
+				<form method="post" action="">
+					<div data-role="fieldcontain">
+						<label for="newPW">New Password</label>
+						<input type="password" name="newPW" id="newPW" placeholder="new password">
+						<br>
+						<label for="confirmNewPW">Confirm New Password</label>
+						<input type="password" name="confirmNewPW" id="confirmNewPW" placeholder="confirm new password">
+					</div>
+				</form>
+				
+				<form>
+					<input type="submit" value="Confirm" data-inline="true">
+				</form>
+		</div>
+  </div>
+
+  <div data-role="footer" id="footer">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#" data-icon="home">List</a></li>
+        <li><a href="#" data-icon="info">Lib</a></li>
+        <li><a href="#" data-icon="grid">Cal</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>
