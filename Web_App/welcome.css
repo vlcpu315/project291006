@@ -1,0 +1,38 @@
+/**#welcome_page_background {
+	background-image: url(background.jpeg);
+	background-size:cover;
+}
+*/
+
+#content{
+	background:154.217.234;
+}
+#welcome_button {
+	background-color:transparent;
+	border:0; 
+}
+
+#guest_account {
+	text-decoration: none;
+	color:black;
+}
+
+#logo {
+	width:100%;
+}
+#logo img{
+	display:block;
+	width:80px;
+	height:80px;
+	margin-top:40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#button{
+	width:100%;
+	text-align: center;
+	margin-top:30%;
+}
+
+
