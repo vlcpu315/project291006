@@ -10,7 +10,8 @@
 }
 
 #content {
-	padding:0;
+	padding: 20px;
+	text-align: center;
 }
 
 #contentdiv, .btnContainer a .ui-btn-inner, .btnContainer a .ui-btn-text {
