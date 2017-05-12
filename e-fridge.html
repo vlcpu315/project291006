@@ -617,7 +617,7 @@
 					<li><a href="#">Spam</a></li>
 					<li><a href="#">Sausage</a></li>
 					<li><a href="#">Juice</a></li>
-					<li><a href="#">Rice</a></li>
+					<li><a href="#" id="hi">Rice</a></li>
 					<li data-icon="plus"><a href="#">+</a></li>
 				</ul>
 			</div>
@@ -636,6 +636,14 @@
 		$(this).remove();
 		});                       
 		});
+		
+		$(document).on("pagecreate","#library",function(){
+		$("li").on("tap",function(){
+
+
+		}); 
+		});
+
 	</script>
 	  </div>
 
@@ -660,14 +668,14 @@
 				<div class="ui-block-a" style="float: none; width: 60%; margin: auto;">
 				<form method="post" action="/action_page_post.php">
 					<label for="item">Item:</label>
-					<input type="text" name="item" id="item" value="Beef">
+					<input type="text" name="item" id="item">
 					<br>
 					<label for="Quantity">Quantity:</label>
 					<input type="text" data-role="spinbox" name="spin" id="spin" value="1" min="0" max="100" />
 						<br>
 					<label for="Phurchase" style="display: inline-block;">Phurchase date:</label>
 					<a href="#" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-notext" style="display: inline-block;float: right;position: relative;top: -15px;right: 7px;">Calendar Icon</a>
-					<input type="text" class="date-input-css" style="display: inline-block;">
+					<input type="text" class="date-input-css" id="today_date" style="display: inline-block;">
 
 					<br>
 					<label for="Expired" style="display: inline-block;">Expired date:</label>
@@ -678,7 +686,17 @@
 					<input type="submit" value="Add" style="margin:0 auto;">
 					</form>
 				</div>
+<script type="text/javascript">
 
+var d=new Date()
+var day=d.getDate()
+var month=d.getMonth() + 1
+var year=d.getFullYear()
+
+
+document.getElementById("today_date").value = month + "/" + day + "/" + year;
+
+</script>
 
 
 	</div>
