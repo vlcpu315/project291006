@@ -498,20 +498,20 @@
 		<div data-role="collapsible-set">
 			<div data-role="collapsible">
 				<h4>Meat</h4>
-				<ul data-role="listview">
-					<li data-icon="plus"><a href="#add">Beef</a></li>
-					<li data-icon="plus"><a href="#add">Chicken</a></li>
-					<li data-icon="plus"><a href="#">Lamb</a></li>
-					<li data-icon="plus"><a href="#">Turkey</a></li>
-					<li data-icon="plus"><a href="#">Pork</a></li>
-					<li data-icon="plus"><a href="#">Duck</a></li>
-					<li data-icon="plus"><a href="#">Goose</a></li>
-					<li data-icon="plus"><a href="#new_item">......</a></li>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Beef</a></li>
+					<li><a href="#">Chicken</a></li>
+					<li><a href="#">Lamb</a></li>
+					<li><a href="#">Turkey</a></li>
+					<li><a href="#">Pork</a></li>
+					<li><a href="#">Duck</a></li>
+					<li><a href="#">Goose</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
 				<h4>Vegetable</h4>
-				<ul data-role="listview">
+				<ul data-role="listview" name="food_list">
 					<li><a href="#">Potato</a></li>
 					<li><a href="#">Spinach</a></li>
 					<li><a href="#">Broccoli</a></li>
@@ -538,11 +538,12 @@
 					<li><a href="#">Squash</a></li>
 					<li><a href="#">Bean</a></li>
 					<li><a href="#">Scallion</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
 				<h4>Seafood</h4>
-				<ul data-role="listview">
+				<ul data-role="listview" name="food_list">
 					<li><a href="#">Salmon</a></li>
 					<li><a href="#">Tuna</a></li>
 					<li><a href="#">Lobster</a></li>
@@ -553,11 +554,12 @@
 					<li><a href="#">Catfish</a></li>
 					<li><a href="#">Scallop</a></li>
 					<li><a href="#">Fomfret</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
 				<h4>Fruit</h4>
-				<ul data-role="listview">
+				<ul data-role="listview" name="food_list">
 					<li><a href="#">Apple</a></li>
 					<li><a href="#">Banana</a></li>
 					<li><a href="#">Strawberry</a></li>
@@ -590,34 +592,51 @@
 					<li><a href="#">Longan</a></li>
 					<li><a href="#">Jujube</a></li>
 					<li><a href="#">Raspberry</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
 				<h4>Dairy</h4>
-				<ul data-role="listview">
-					<li><a href="#">Beef</a></li>
-					<li><a href="#">Chicken</a></li>
-					<li><a href="#">Lamb</a></li>
-					<li><a href="#">Turkey</a></li>
-					<li><a href="#">Pork</a></li>
-					<li><a href="#">Duck</a></li>
-					<li><a href="#">Goose</a></li>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Milk</a></li>
+					<li><a href="#">Yogurt</a></li>
+					<li><a href="#">Butter</a></li>
+					<li><a href="#">Cheese</a></li>
+					<li><a href="#">Cream</a></li>
+					<li><a href="#">Yakult</a></li>
+					<li><a href="#">Condensed milk</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
 				</ul>
 			</div>
 			<div data-role="collapsible">
 				<h4>Others</h4>
-				<ul data-role="listview">
-					<li><a href="#">Beef</a></li>
-					<li><a href="#">Chicken</a></li>
-					<li><a href="#">Lamb</a></li>
-					<li><a href="#">Turkey</a></li>
-					<li><a href="#">Pork</a></li>
-					<li><a href="#">Duck</a></li>
-					<li><a href="#">Goose</a></li>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Ham</a></li>
+					<li><a href="#">Jam</a></li>
+					<li><a href="#">Pickle</a></li>
+					<li><a href="#">Spam</a></li>
+					<li><a href="#">Sausage</a></li>
+					<li><a href="#">Juice</a></li>
+					<li><a href="#">Rice</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
 				</ul>
 			</div>
 		</div>
+	<script>
+		var arr1 = document.getElementsByName("food_list");
+		for (j = 0; j < arr1.length; j++) {
+		var arr2 = arr1[j].getElementsByTagName("a");
+		for (i = 0; i < arr2.length - 1; i++) {
+		arr2[i].href = "#add";
+		arr2[i].class="ui-btn ui-btn-icon-right ui-icon-plus ui-btn-icon-notext"}
+		arr2[i].href = "#new_item";}
 		
+		$(document).on("pagecreate","#library",function(){
+		$("li").on("taphold",function(){
+		$(this).remove();
+		});                       
+		});
+	</script>
 	  </div>
 
 	  <div data-role="footer" data-position="fixed" id="footer" style="position: fixed; opacity: initial;">
