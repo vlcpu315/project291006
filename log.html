@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="css/log.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="log">
+  <div data-role="header">
+  <h1>Welcome To E-FRIDGE</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <div id="pc1">
+    <img src="image/logo.png" alt="logo" width="110%"></div>
+	<div class="bottons">
+		<a href="#signin" class="ui-btn " style="box-shadow:2px 2px black">SIGN IN</a>
+		<a href="#signup" class="ui-btn " style="box-shadow:2px 2px black">SIGN UP</a>
+	</div>
+	<a href="e-fridge.html" rel="external" class="guest">Start as a Guest</a>
+  </div>
+</div>
+
+<div data-role="page" id="signin">
+  <div data-role="header">
+  <a class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" href="#log" style="font-size:10px"></a>
+ <h1>Welcome To E-FRIDGE</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <div id="pc2">
+    <img src="image/logo.png" alt="logo" width="110%"/></div>
+	<p>SIGN IN</p>
+<form method="post" action="/action_page_post.php">
+      <div>
+        <label>User name:</label>
+        <input type="text" name="username" >       
+        <br><label>Password:</label>
+        <input type="password" name="password">
+		<br><label>Confirm password:</label>
+        <input type="text" name="confirmPW">
+      </div>
+	    <input type="submit" data-inline="true" value="Submit">
+    </form>
+</div> 
+</div>
+
+<div data-role="page" id="signup">
+  <div data-role="header">
+  <a href="#log" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" style="font-size:10px"></a>
+  <h1>Welcome To E-FRIDGE</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <div id="pc3" style="width:130%;
+	margin-left:-17%;
+	transform:translateX(-50%)};">
+    <img src="image/logo.png" alt="logo" width="110%"/></div>
+	<p>SIGN UP</p>
+<form method="post" action="/action_page_post.php">
+      <div>
+        <label>User name:</label>
+        <input type="text" name="username" style="width:100%">       
+        <br><label>Password:</label>
+        <input type="password" name="password">
+		<div id="fc">
+		<a href="#facebook" ><img src="image/fc.ico" alt="facebook" width="30px" height="30px"/></a>
+		</div>
+		<br><label for="remember">Remember me?</label>
+        <input type="checkbox" name="remember" id="remember" value="remember" checked>
+		
+      </div>
+      <input type="submit" data-inline="true" value="Submit">
+    </form>
+</div> 
+</div>
+
+<div data-role="page" id="facebook">
+  <div data-role="header">
+  <a data-rel="back" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" style="font-size:10px"></a>
+  <h1>Welcome To E-FRIDGE</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <img id="fcb"src="image/fb9.png" alt="Facebook" width="40%" height="5%"/>
+	<p>SIGN UP BY FACEBOOK</p>
+<form method="post" action="/action_page_post.php">
+      <div>
+        <label>User name:</label>
+        <input type="text" name="username">       
+        <br><label>Password:</label>
+        <input type="text" name="password">
+		
+      </div>
+      <br><input type="submit" data-inline="true" value="Submit">
+    </form>
+</div> 
+</body>
+</html> 

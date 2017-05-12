@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>main page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.datepicker.theme.css" />
+		<script src="js/jquery.mobile-1.4.5/jquery-1.12.4.js"></script>
+		<script src="js/datepicker.js"></script>
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/jqm-spinbox.min.js"></script>
+        <script src="js/jquery.mobile.subpage.js"></script>
+		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css">
+		<script src="js/jquery.ui.datepicker.js"></script>
+		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
+
+        <style>
+            div #content.ui-content{ background: none }      
+            .ui-page { 
+                background: linear-gradient(rgb(157,217,234),white);
+            }
+            #NewUser #button {width:1% !important;
+                margin: auto;
+                border-radius: 0 !important;
+            }
+            #NewUser #content .ui-btn{width: 7%;
+                height:45px;
+                margin:20% auto;
+                font-size: 36px;
+                box-shadow: 5px 5px grey;
+                border-radius: 10px;
+            }
+            #listpage .ui-collapsible-heading-collapsed > .ui-collapsible-heading-toggle {
+                background:none !important;
+                border:1px solid white !important;
+                border-radius: 12px !important;
+            }
+            #listpage .ui-btn.ui-corner-all.ui-icon-plus.ui-btn-icon-notext{position: fixed;
+                bottom:10%;
+                right:8%}
+            #back1{width:14% !important;
+                background:none;
+                border:none;
+                font-size: 18px}
+            #InfomationPage table {width:70%;
+                margin:20% auto}
+            #InfomationPage table td {width:200px;
+                text-align: center;
+                height:50px}
+            #InfomationPage table th{text-align: right;
+                width: 100px}
+            #InfomationPage .center-button1{text-align: center;}
+            #InfomationPage .center-button1 a {box-shadow: 3px 3px grey;
+                margin:0 20px}
+            #back{width:14% !important;
+                background:none;
+                border:none;
+                font-size: 18px}
+            #modify .ui-input-text { width: 80% !important;
+            }
+            #formModify {width:90%;
+                margin: 0 auto}
+            #modify .center-button a{width: 40%;
+                margin:0 auto}
+            #pagefour1{margin: 20% auto}
+            .ui-dialog {
+                top: 15% !important;
+            }
+        </style>
+		<script>
+		   $(function(){
+		   $( ".date-input-css" ).datepicker();
+		  })
+		 </script>
+		 <script>
+		  $( function() {
+			$( "#datepicker" ).datepicker();
+		  } );
+		  </script>
+    </head>
+    <body>
+		<!--Ken-->
+        <div data-role="page" id="NewUser">
+            <div data-role="header">
+                <a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
+                <h1>Home</h1>
+                <a href="#popupMenu00" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+					<div data-role="popup" id="popupMenu00">
+						<ul data-role="listview" data-inset="true" style="min-width:210px;">
+							<li><a href="log.html" rel="external">Log Out</a></li>
+							<li><a href="#confirmPW">Change Password</a></li>
+							<li><a href="#settings">Settings</a></li>
+							<li><a href="#affiliated">Affiliated App</a></li>
+							<li><a href="#contactUs">Contact Us</a></li>
+						</ul>
+					</div>
+            </div>
+            <div data-role="content" id="content">
+
+                <a href="#listpage" class="ui-btn">+</a>
+
+            </div>
+
+            <div data-role="footer" id="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#listpage" data-icon="home">List</a></li>
+                        <li><a href="#library" data-icon="info">Lib</a></li>
+                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="listpage">
+            <div data-role="header" data-theme="a">
+				<a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
+                <h1>Home</h1>
+                <a href="#popupMenu0" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+					<div data-role="popup" id="popupMenu0">
+						<ul data-role="listview" data-inset="true" style="min-width:210px;">
+							<li><a href="log.html" rel="external">Log Out</a></li>
+							<li><a href="#confirmPW">Change Password</a></li>
+							<li><a href="#settings">Settings</a></li>
+							<li><a href="#affiliated">Affiliated App</a></li>
+							<li><a href="#contactUs">Contact Us</a></li>
+						</ul>
+					</div>
+            </div>
+
+            <div data-role="content" id="content" data-theme="a">
+                <div data-role="collapsible-set" id="set">
+                    <div data-role="collapsible" >
+                        <h4>Meat<span class="ui-li-count">2</span></h4>
+                        <ul data-role="listview">
+                            <li ><a href="#InfomationPage" >Beef</a></li>
+                            <li><a href="#">Chicken</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" >
+                        <h4>Vegetable<span class="ui-li-count">2</span></h4>
+                        <ul data-role="listview" >
+                            <li><a href="#">Amaranth</a></li>
+                            <li><a href="#">Cabbage</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" >
+                        <h4>Seafood<span class="ui-li-count"><script></script>></span></h4>
+                        <ul data-role="listview" >
+                            <li><a href="#">Shrimps</a></li>
+                            <li><a href="#">Crabs</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" >
+                        <h4>Fruit<span class="ui-li-count">2</span></h4>
+                        <ul data-role="listview" >
+                            <li><a href="#">Apple</a></li>
+                            <li><a href="#">Banana</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" >
+                        <h4>Dairy<span class="ui-li-count">2</span></h4>
+                        <ul data-role="listview" >
+                            <li><a href="#">Milk</a></li>
+                            <li><a href="#">cheese</a></li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible" >
+                        <h4>Others<span class="ui-li-count">0</span></h4>
+                        <ul data-role="listview" >
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext" style="font-size:24px">Plus Icon</a>
+            </div>
+
+            <div data-role="footer" id="footer" data-theme="a">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#listpage" data-icon="home">List</a></li>
+                        <li><a href="#library" data-icon="info">Lib</a></li>
+						<!--changed href="calendar.html" rel="external"-->
+                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="InfomationPage">
+            <a href="#listpage" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" id="back">BACK</a> 
+            <table>
+                <tr>
+                    <th style="text-align:left;font-size:20px;text-decoration:underline">Beef</th>
+                </tr>
+                <tr>
+                    <th>Quantity:</th>
+                    <td>2 lb</td>
+                </tr>
+                <tr>
+                    <th>Purchase:</th>
+                    <td>03/04/2017</td>
+                </tr>
+                <tr>
+                    <th>Expired:</th>
+                    <td>03/10/2017</td>
+                </tr>
+            </table>
+            <div data-role="button" class="center-button1">
+                <a href="#pageConfirm" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">Delete</a>
+                <a href="#modify" data-role="button" data-inline="true" data-theme="a">Modify</a>
+            </div> 
+        </div>
+        <div data-role="dialog" id="pageConfirm">
+            <div data-role="header" data-theme="a">
+                <h1>Dialog</h1>
+
+            </div>
+            <div data-role="content" data-theme="a">
+                <h1>Sure?</h1>
+                <p><small>The item will be deleted permanently.</small></p>
+                <a href="#listpage" data-role="button" data-theme="b">Yes</a>       
+                <a href="#InfomationPage" data-role="button" data-rel="back" data-theme="c">No</a>    
+            </div>
+        </div>
+        <div data-role="page" id="modify">
+            <a href="#InfomationPage" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" id="back">BACK</a>
+            <form action="" method="post" id="formModify">
+                <table id="pagefour1">
+                    <tr>
+                        <th><input type="text" name="name" id="beef" value="Beef" ></th>
+                    </tr>
+                    <tr>
+                        <th>Quantity:</th>
+                        <td><input type="number" name="quantity"></td>
+                    </tr>
+                    <tr>
+                        <th>Purchase:</th>
+                        <td><input type="date" name="date" id="date" value="" /></td>
+                    </tr>
+                    <tr>
+                        <th>Expired:</th>
+                        <td><input type="date" name="date" id="date" value="" /></td>
+                    </tr>
+
+                </table>  
+                <div data-role="button" class="center-button">
+                    <a href="index.html" data-role="button" >Confirm</a>
+                </div>
+            </form>
+        </div>
+		
+<!--Grace-->
+<div data-role="page" id="confirmPW">
+		<div data-role="header">
+		<a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
+		<h1>Confirm Password</h1>
+		<a href="#popupMenu" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+		<div data-role="popup" id="popupMenu">
+			<ul data-role="listview" data-inset="true" style="min-width:210px;">
+				<li><a href="log.html" rel="external">Log Out</a></li>
+				<li><a href="#confirmPW">Change Password</a></li>
+				<li><a href="#settings">Settings</a></li>
+				<li><a href="#affiliated">Affiliated App</a></li>
+				<li><a href="#contactUs">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="content" id="content">
+		<div class="confirmPW">
+			<br/>
+		  	<h2>Please type your current password</h2>
+			<br/>
+				<form method="post" action="">
+					<div data-role="fieldcontain">
+						<label for="password"></label>
+						<input type="password" name="currentPW" id="currentPW" placeholder="password">
+					</div>
+				</form>
+				
+				<form>
+					<input type="submit" value="Confirm" data-inline="true">
+				</form>
+		</div>
+	</div>
+	<div data-role="footer" id="footer">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#listpage" data-icon="home">List</a></li>
+				<li><a href="#library" data-icon="info">Lib</a></li>
+				<li><a href="#pagecal" data-icon="grid">Cal</a></li>
+			</ul>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="page" id="newPW">
+		<div data-role="header">
+			<a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
+			<h1>New Password</h1>
+			<a href="#popupMenu2" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+			<div data-role="popup" id="popupMenu2">
+			<ul data-role="listview" data-inset="true" style="min-width:210px;">
+				<li><a href="log.html" rel="external">Log Out</a></li>
+				<li><a href="#confirmPW" rel="external">Change Password</a></li>
+				<li><a href="#settings" rel="external">Settings</a></li>
+				<li><a href="#affiliated" rel="external">Affiliated App</a></li>
+				<li><a href="#contactUs" rel="external">Contact Us</a></li>
+			</ul>
+		</div>
+		</div>
+	<div data-role="content" id="content">
+		<div class="newPW">
+				<br/>
+				<h2>Enter your new password</h2>
+					<form method="post" action="">
+						<div data-role="fieldcontain">
+							<label for="newPW">New Password</label>
+							<input type="password" name="newPW" id="newPW" placeholder="new password">
+							<br>
+							<label for="confirmNewPW">Confirm New Password</label>
+							<input type="password" name="confirmNewPW" id="confirmNewPW" placeholder="confirm new password">
+						</div>
+					</form>
+				
+					<form>
+						<input type="submit" value="Confirm" data-inline="true">
+					</form>
+			</div>
+	</div>
+	<div data-role="footer" id="footer">
+		<div data-role="navbar">
+			<ul>
+			<li><a href="#listpage" data-icon="home">List</a></li>
+			<li><a href="#library" data-icon="info">Lib</a></li>
+			<li><a href="#pagecal" data-icon="grid">Cal</a></li>
+		</ul>
+		</div>
+	</div>
+</div>
+
+	<div data-role="page" id="settings">
+		<div data-role="header">
+		<a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
+		<h1>Settings</h1>
+		<a href="#popupMenu3" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+		<div data-role="popup" id="popupMenu3">
+			<ul data-role="listview" data-inset="true" style="min-width:210px;">
+				<li><a href="log.html" rel="external">Log Out</a></li>
+				<li><a href="#confirmPW" rel="external">Change Password</a></li>
+				<li><a href="#settings" rel="external">Settings</a></li>
+				<li><a href="#affiliated" rel="external">Affiliated App</a></li>
+				<li><a href="#contactUs" rel="external">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content">
+		<div class="settings">
+		<label for="spin">Warning before 
+		<input type="text" data-role="spinbox" name="spin" id="spin" value="60" min="0" max="100" />
+		days</label>
+	</div>
+    <form method="post" action="demoform.asp">
+      <div data-role="fieldcontain">
+        <label for="switch">Email</label>
+        <select name="emailswitch" id="emailswitch" data-role="slider">
+          <option value="on">On</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
+    </form>
+	<form method="post" action="demoform.asp">
+		<div data-role="fieldcontain">
+			<label for="switch">Tips</label>
+			<select name="tipsswitch" id="tipsswitch" data-role="slider">
+				<option value="on">On</option>
+				<option value="off">Off</option>
+			</select>
+		</div>
+    </form>
+	</div>
+
+	  <div data-role="footer" id="footer">
+		<div data-role="navbar">
+		  <ul>
+			<li><a href="#listpage" data-icon="home">List</a></li>
+			<li><a href="#library" data-icon="info">Lib</a></li>
+			<li><a href="#pagecal" data-icon="grid">Cal</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</div>
+
+	<div data-role="page" id="contactUs">
+		<div data-role="header">
+			<a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
+			<h1>Contact Us</h1>
+			<a href="#popupMenu4" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+			<div data-role="popup" id="popupMenu4">
+				<ul data-role="listview" data-inset="true" style="min-width:210px;">
+					<li><a href="log.html" rel="external">Log Out</a></li>
+					<li><a href="#confirmPW" rel="external">Change Password</a></li>
+					<li><a href="#settings" rel="external">Settings</a></li>
+					<li><a href="#affiliated" rel="external">Affiliated App</a></li>
+					<li><a href="#contactUs" rel="external">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="content">
+			<div id="logo" align="center">
+				<img src="image/Logo E.png" alt="">
+			</div>
+		
+			<h2>Contact information</h2>
+			<p>
+			Victor Chen: vlcpulane2@Hotmail.com<br>
+			Ken Wu: yanhwan@gmail.com<br>
+			Samuel: hillpig@gmail.com<br>
+			Grace: gracechengyijia@gmail.com<br>
+			Bob: winnerbob87@gmail.com<br>
+			</p>
+		</div>
+
+		<div data-role="footer" id="footer">
+			<div data-role="navbar">
+			<ul>
+				<li><a href="#listpage" data-icon="home">List</a></li>
+				<li><a href="#library" data-icon="info">Lib</a></li>
+				<li><a href="#pagecal" data-icon="grid">Cal</a></li>
+			</ul>
+			</div>
+		</div>
+</div>
+
+<div data-role="page" id="affiliated">
+	  <div data-role="header" data-position="fixed" style="opacity: initial;">
+		<a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
+		<h1>Affiliated App</h1>
+		<div class="ui-btn-right">
+		<a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+				<div data-role="popup" id="popupMenu6">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;">
+						<li><a href="log.html" rel="external">Log Out</a></li>
+						<li><a href="#confirmPW">Change Password</a></li>
+						<li><a href="#affiliated">Affiliated App</a></li>
+						<li><a href="#settings">Settings</a></li>
+						<li><a href="#contactUs">Contact Us</a></li>
+					</ul>
+				</div>
+		</div>
+	  </div>
+
+	  <div data-role="main" class="ui-content">
+			<div id="logo1" align="center">
+				<img src="image/logo2.jpg" alt="" style="max-width: 50%;">
+				<p>Food Smart can keep the grocey item on track(days left to expire), we have tracking list and provide report for period of time.</p>
+			</div>
+		
+			<div id="logo2" align="center">
+				<img src="image/logo6.png" alt="" style="max-width: 60%;">
+				<p>Reducing food waste by starting to manage your food in the fridge.</p>
+			</div>
+
+		
+	  </div>
+
+	  <div data-role="footer" data-position="fixed" id="footer" style="position: fixed; opacity: initial;">
+		<div data-role="navbar">
+		  <ul>
+			<li><a href="#listpage" data-icon="home">List</a></li>
+			<li><a href="#library" data-icon="info">Lib</a></li>
+			<li><a href="#pagecal" data-icon="grid">Cal</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</div> 
+
+<!--Samuel-->
+<div data-role="page" id="library">
+	  <div data-role="header" data-position="fixed" style="opacity: initial;">
+		<a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
+		<h1>Food Library</h1>
+		<div class="ui-btn-right">
+		<a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+				<div data-role="popup" id="popupMenu5">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;">
+						<li><a href="log.html" rel="external">Log Out</a></li>
+						<li><a href="#confirmPW">Change Password</a></li>
+						<li><a href="#settings">Settings</a></li>
+						<li><a href="#affiliated">Affiliated App</a></li>
+						<li><a href="#contactUs">Contact Us</a></li>
+					</ul>
+				</div>
+		</div>
+	  </div>
+
+	  <div data-role="main" class="ui-content">
+		<div data-role="collapsible-set">
+			<div data-role="collapsible">
+				<h4>Meat</h4>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Beef</a></li>
+					<li><a href="#">Chicken</a></li>
+					<li><a href="#">Lamb</a></li>
+					<li><a href="#">Turkey</a></li>
+					<li><a href="#">Pork</a></li>
+					<li><a href="#">Duck</a></li>
+					<li><a href="#">Goose</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
+				</ul>
+			</div>
+			<div data-role="collapsible">
+				<h4>Vegetable</h4>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Potato</a></li>
+					<li><a href="#">Spinach</a></li>
+					<li><a href="#">Broccoli</a></li>
+					<li><a href="#">Cabbage</a></li>
+					<li><a href="#">Carrot</a></li>
+					<li><a href="#">Onion</a></li>
+					<li><a href="#">Tomato</a></li>
+					<li><a href="#">Pea</a></li>
+					<li><a href="#">Cauliflower</a></li>
+					<li><a href="#">Lettuce</a></li>
+					<li><a href="#">Maize</a></li>
+					<li><a href="#">Cucumber</a></li>
+					<li><a href="#">Celery</a></li>
+					<li><a href="#">Kale</a></li>
+					<li><a href="#">Garden asparagus</a></li>
+					<li><a href="#">Turnip</a></li>
+					<li><a href="#">Eggplant</a></li>
+					<li><a href="#">Garlic</a></li>
+					<li><a href="#">Pepper</a></li>
+					<li><a href="#">Leek</a></li>
+					<li><a href="#">Chili pepper</a></li>
+					<li><a href="#">Daikon</a></li>
+					<li><a href="#">Bamboo</a></li>
+					<li><a href="#">Squash</a></li>
+					<li><a href="#">Bean</a></li>
+					<li><a href="#">Scallion</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
+				</ul>
+			</div>
+			<div data-role="collapsible">
+				<h4>Seafood</h4>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Salmon</a></li>
+					<li><a href="#">Tuna</a></li>
+					<li><a href="#">Lobster</a></li>
+					<li><a href="#">Crabs</a></li>
+					<li><a href="#">Shrimps</a></li>
+					<li><a href="#">Cod</a></li>
+					<li><a href="#">Flounder</a></li>
+					<li><a href="#">Catfish</a></li>
+					<li><a href="#">Scallop</a></li>
+					<li><a href="#">Fomfret</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
+				</ul>
+			</div>
+			<div data-role="collapsible">
+				<h4>Fruit</h4>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Apple</a></li>
+					<li><a href="#">Banana</a></li>
+					<li><a href="#">Strawberry</a></li>
+					<li><a href="#">Orange</a></li>
+					<li><a href="#">Grape</a></li>
+					<li><a href="#">Pear</a></li>
+					<li><a href="#">Peach</a></li>
+					<li><a href="#">Cherry</a></li>
+					<li><a href="#">Pineapple</a></li>
+					<li><a href="#">Grapefruit</a></li>
+					<li><a href="#">Mango</a></li>
+					<li><a href="#">Lemon</a></li>
+					<li><a href="#">Watermelon</a></li>
+					<li><a href="#">Kiwifruit</a></li>
+					<li><a href="#">Avocado</a></li>
+					<li><a href="#">Papaya</a></li>
+					<li><a href="#">Berry</a></li>
+					<li><a href="#">Blackberry</a></li>
+					<li><a href="#">Apricot</a></li>
+					<li><a href="#">Cantaloupe</a></li>
+					<li><a href="#">Coconut</a></li>
+					<li><a href="#">Tangerine</a></li>
+					<li><a href="#">Pomegranate</a></li>
+					<li><a href="#">Lychee</a></li>
+					<li><a href="#">Olive</a></li>
+					<li><a href="#">Durian</a></li>
+					<li><a href="#">Prune</a></li>
+					<li><a href="#">Purple mangosteen</a></li>
+					<li><a href="#">Pitaya</a></li>
+					<li><a href="#">Longan</a></li>
+					<li><a href="#">Jujube</a></li>
+					<li><a href="#">Raspberry</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
+				</ul>
+			</div>
+			<div data-role="collapsible">
+				<h4>Dairy</h4>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Milk</a></li>
+					<li><a href="#">Yogurt</a></li>
+					<li><a href="#">Butter</a></li>
+					<li><a href="#">Cheese</a></li>
+					<li><a href="#">Cream</a></li>
+					<li><a href="#">Yakult</a></li>
+					<li><a href="#">Condensed milk</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
+				</ul>
+			</div>
+			<div data-role="collapsible">
+				<h4>Others</h4>
+				<ul data-role="listview" name="food_list">
+					<li><a href="#">Ham</a></li>
+					<li><a href="#">Jam</a></li>
+					<li><a href="#">Pickle</a></li>
+					<li><a href="#">Spam</a></li>
+					<li><a href="#">Sausage</a></li>
+					<li><a href="#">Juice</a></li>
+					<li><a href="#" id="hi">Rice</a></li>
+					<li data-icon="plus"><a href="#">+</a></li>
+				</ul>
+			</div>
+		</div>
+	<script>
+		var arr1 = document.getElementsByName("food_list");
+		for (j = 0; j < arr1.length; j++) {
+		var arr2 = arr1[j].getElementsByTagName("a");
+		for (i = 0; i < arr2.length - 1; i++) {
+		arr2[i].href = "#add";
+		arr2[i].class="ui-btn ui-btn-icon-right ui-icon-plus ui-btn-icon-notext"}
+		arr2[i].href = "#new_item";}
+		
+		$(document).on("pagecreate","#library",function(){
+		$("li").on("taphold",function(){
+		$(this).remove();
+		});                       
+		});
+		
+		$(document).on("pagecreate","#library",function(){
+		$("li").on("tap",function(){
+		item_name = $(this).text();
+		document.getElementById("item_input").value = item_name;
+		}); 
+		});
+
+	</script>
+	  </div>
+
+	  <div data-role="footer" data-position="fixed" id="footer" style="position: fixed; opacity: initial;">
+		<div data-role="navbar">
+		  <ul>
+			<li><a href="#listpage" data-icon="home">List</a></li>
+			<li><a href="#library" data-icon="info">Lib</a></li>
+			<li><a href="#pagecal" data-icon="grid">Cal</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</div> 
+
+	<div data-role="page" id="add">
+	  <div data-role="header">
+	  <a href="#library" class="ui-btn ui-icon-back ui-btn-icon-notext">Back Button</a>
+		<h1>Add Item</h1>
+	  </div>
+	  <div data-role="content" id="content">
+
+				<div class="ui-block-a" style="float: none; width: 60%; margin: auto;">
+				<form method="post" action="/action_page_post.php">
+					<label for="item">Item:</label>
+					<input type="text" name="item" id="item_input">
+					<br>
+					<label for="Quantity">Quantity:</label>
+					<input type="text" data-role="spinbox" name="spin" id="spin" value="1" min="0" max="100" />
+						<br>
+					<label for="Phurchase" style="display: inline-block;">Purchase date:</label>
+					<a href="#" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-notext" style="display: inline-block;float: right;position: relative;top: -15px;right: 7px;">Calendar Icon</a>
+					<input type="text" class="date-input-css" id="today_date" style="display: inline-block;">
+
+					<br>
+					<label for="Expired" style="display: inline-block;">Expired date:</label>
+					<a href="#" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-notext" style="display: inline-block;float: right;position: relative;top: -15px;right: 7px;">Calendar Icon</a>
+					<input type="text" class="date-input-css" id="next_month" style="display: inline-block;">
+
+					<br>
+					<input type="submit" value="Add" style="margin:0 auto;">
+					</form>
+				</div>
+<script type="text/javascript">
+
+var d=new Date()
+var day=d.getDate()
+var month=d.getMonth() + 1
+var year=d.getFullYear()
+
+document.getElementById("today_date").value = month + "/" + day + "/" + year;
+document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
+
+
+</script>
+
+
+	</div>
+	</div> 
+
+	<div data-role="page" id="new_item">
+	  <div data-role="header">
+	  <a href="#library" class="ui-btn ui-icon-back ui-btn-icon-notext">Back Button</a>
+		<h1>New Item</h1>
+	  </div>
+	  <div data-role="main" class="ui-content">
+		<div class="ui-block-a" style="float: none; width: 60%; margin: auto;">
+		<form method="post" action="/action_page_post.php">
+
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name">
+			<br>
+			<label for="period">Period: (Days)</label>
+			<input type="text" name="period" id="period">
+			<br>
+			<label for="info">Additional Information:</label>
+			<textarea name="addinfo" id="info" style="height: 10em;"></textarea>
+			<br>
+			<input type="submit" data-inline="false" value="Submit">
+		</form>
+		</div>
+
+	</div>
+</div> 
+
+<!--Vic-->
+<div data-role="page" id="pagecal">
+		<div data-role="header">
+			<a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
+				<h1>CALENDAR</h1>
+			<div class="ui-btn-right">
+			<a href="#popupMenu7" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
+				<div data-role="popup" id="popupMenu7">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;">
+						<li><a href="log.html" rel="external">Log Out</a></li>
+						<li><a href="#confirmPW">Change Password</a></li>
+						<li><a href="#settings">Settings</a></li>
+						<li><a href="#affiliated">Affiliated App</a></li>
+						<li><a href="#contactUs">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		  <div data-role="content">
+			
+				
+			 <div data-role="date" data-inline="true">
+			</div>
+		  </div>
+		  <div data-role="footer" id="footer">
+			<div data-role="navbar">
+			  <ul>
+				<li><a href="#listpage" data-icon="home">List</a></li>
+				<li><a href="#library" data-icon="info">Lib</a></li>
+				<li><a href="#pagecal" data-icon="grid">Cal</a></li>
+			  </ul>
+			</div>
+		  </div>
+</div> 
+    </body>
+</html>
