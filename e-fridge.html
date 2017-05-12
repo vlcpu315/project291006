@@ -680,7 +680,7 @@
 					<br>
 					<label for="Expired" style="display: inline-block;">Expired date:</label>
 					<a href="#" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-notext" style="display: inline-block;float: right;position: relative;top: -15px;right: 7px;">Calendar Icon</a>
-					<input type="text" class="date-input-css" style="display: inline-block;">
+					<input type="text" class="date-input-css" id="next_month" style="display: inline-block;">
 
 					<br>
 					<input type="submit" value="Add" style="margin:0 auto;">
@@ -695,7 +695,7 @@ var year=d.getFullYear()
 
 
 document.getElementById("today_date").value = month + "/" + day + "/" + year;
-
+document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 </script>
 
 
