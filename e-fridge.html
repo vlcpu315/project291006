@@ -639,8 +639,8 @@
 		
 		$(document).on("pagecreate","#library",function(){
 		$("li").on("tap",function(){
-
-
+		item_name = $(this).text();
+		document.getElementById("item_input").value = item_name;
 		}); 
 		});
 
@@ -668,7 +668,7 @@
 				<div class="ui-block-a" style="float: none; width: 60%; margin: auto;">
 				<form method="post" action="/action_page_post.php">
 					<label for="item">Item:</label>
-					<input type="text" name="item" id="item">
+					<input type="text" name="item" id="item_input">
 					<br>
 					<label for="Quantity">Quantity:</label>
 					<input type="text" data-role="spinbox" name="spin" id="spin" value="1" min="0" max="100" />
@@ -693,9 +693,10 @@ var day=d.getDate()
 var month=d.getMonth() + 1
 var year=d.getFullYear()
 
-
 document.getElementById("today_date").value = month + "/" + day + "/" + year;
 document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
+
+
 </script>
 
 
