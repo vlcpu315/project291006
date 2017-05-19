@@ -15,7 +15,8 @@
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css">
 		<script src="js/jquery.ui.datepicker.js"></script>
 		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
-
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="js/login.js"></script>
         <style>
             div #content.ui-content{ background: none }      
             .ui-page { 
@@ -89,7 +90,7 @@
                 <a href="#popupMenu00" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 					<div data-role="popup" id="popupMenu00">
 						<ul data-role="listview" data-inset="true" style="min-width:210px;">
-							<li><a href="log.html" rel="external">Log Out</a></li>
+							<li><a onclick="return SignOut()">Log Out</a></li>
 							<li><a href="#confirmPW">Change Password</a></li>
 							<li><a href="#settings">Settings</a></li>
 							<li><a href="#affiliated">Affiliated App</a></li>
@@ -120,7 +121,7 @@
                 <a href="#popupMenu0" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 					<div data-role="popup" id="popupMenu0">
 						<ul data-role="listview" data-inset="true" style="min-width:210px;">
-							<li><a href="log.html" rel="external">Log Out</a></li>
+							<li><a onclick="return SignOut()">Log Out</a></li>
 							<li><a href="#confirmPW">Change Password</a></li>
 							<li><a href="#settings">Settings</a></li>
 							<li><a href="#affiliated">Affiliated App</a></li>

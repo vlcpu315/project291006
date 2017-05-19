@@ -1,0 +1,30 @@
+
+var config = {
+    apiKey: "AIzaSyBq_NsQ3l5KdJ-vs7dK5glVM1HQc0NKS6A",
+    authDomain: "webapp-afa8f.firebaseapp.com",
+    databaseURL: "https://webapp-afa8f.firebaseio.com",
+    projectId: "webapp-afa8f",
+    storageBucket: "webapp-afa8f.appspot.com",
+    messagingSenderId: "189007667783"
+};
+firebase.initializeApp(config);
+
+function SignIn(){
+    var email = document.getElementById("name1").value;
+    var password = document.getElementById("password1").value;
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+        } else {
+            alert(errorMessage);
+        }
+        console.log(error);
+    });
+}
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if(firebaseUser){
+        window.location="e-fridge.html";
+    }
+});
