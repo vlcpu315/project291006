@@ -6,6 +6,18 @@
   <link rel="stylesheet" href="css/log.css">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+    function changeImage() {
+    var image = document.getElementById('logo');
+    if (image.src.match("image/logo.png")) {
+        image.src = "image/logo2.png";
+    } else if(image.src.match("image/logo2.png")){
+        image.src = "image/logo3.png";
+    }else if (image.src.match("image/logo3.png")){
+      image.src = "image/logo.png";  
+    }
+}
+    </script>>
 </head>
 <body>
 
@@ -16,7 +28,7 @@
 
   <div data-role="main" class="ui-content">
   <div id="pc1">
-    <img src="image/logo.png" alt="logo" width="110%"></div>
+    <img src="image/logo.png" onclick="changeImage()" alt="logo" width="110%" id="logo"></div>
 	<div class="bottons">
 		<a href="#signin" class="ui-btn " style="box-shadow:2px 2px black">SIGN IN</a>
 		<a href="#signup" class="ui-btn " style="box-shadow:2px 2px black">SIGN UP</a>
