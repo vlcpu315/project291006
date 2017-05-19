@@ -37,7 +37,6 @@
                     document.getElementById("name").style.backgroundColor="white";
                     document.getElementById("name").removeAttribute("placeholder");
                 }
-
                 if(!testPassWord()){
                     var x = document.getElementById("password");
                     x.value = "";
@@ -63,84 +62,93 @@
                     document.getElementById("confirm").style.backgroundColor="white";
                     document.getElementById("confirm").removeAttribute("placeholder");
                 }
-
-                return final;              
+                return final;
+            }
+            function changeImage() {
+                var image = document.getElementById('logo');
+                if (image.src.match("image/logo.png")) {
+                    image.src = "image/logo2.png";
+                } else if(image.src.match("image/logo2.png")){
+                    image.src = "image/logo3.png";
+                }else if (image.src.match("image/logo3.png")){
+                    image.src = "image/logo.png";  
+                }
             }
         </script>
     </head>
-    <body>
+<body>
 
-        <div data-role="page" id="log">
-            <div data-role="header">
-                <h1>Welcome To E-FRIDGE</h1>
+    <div data-role="page" id="log">
+        <div data-role="header">
+            <h1>Welcome To E-FRIDGE</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div id="pc1">
+                <img src="image/logo.png" onclick="changeImage()" alt="logo" width="110%" id="logo"></div>
+            <div class="bottons">
+                <a href="#signin" class="ui-btn " style="box-shadow:2px 2px black">SIGN IN</a>
+                <a href="#signup" class="ui-btn " style="box-shadow:2px 2px black">SIGN UP</a>
             </div>
+            <a href="e-fridge.html" rel="external" class="guest">Start as a Guest</a>
+        </div>
+    </div>
 
-            <div data-role="main" class="ui-content">
-                <div id="pc1">
-                    <img src="image/logo.png" alt="logo" width="110%"></div>
-                <div class="bottons">
-                    <a href="#signin" class="ui-btn " style="box-shadow:2px 2px black">SIGN IN</a>
-                    <a href="#signup" class="ui-btn " style="box-shadow:2px 2px black">SIGN UP</a>
+    <div data-role="page" id="signup">
+        <div data-role="header">
+            <a class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" href="#log" style="font-size:10px"></a>
+            <h1>Welcome To E-FRIDGE</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div id="pc2">
+                <img src="image/logo.png" alt="logo" width="110%"/></div>
+            <p>SIGN UP</p>
+            <form method="post" onsubmit="return submitClick()">
+                <div>
+                    <label>User name:</label>
+                    <input type="text" name="username" id="name">       
+                    <br><label>Password:</label>
+                    <input type="password" name="password" id="password">
+                    <br><label>Confirm password:</label>
+                    <input type="password" name="confirmPW" id="confirm">
                 </div>
-                <a href="e-fridge.html" rel="external" class="guest">Start as a Guest</a>
-            </div>
+                <input type="submit" data-inline="true" value="Submit" onclick="SignUp()">
+            </form>
+            <script src="js/signup.js"></script>
+        </div> 
+    </div>
+
+    <div data-role="page" id="signin">
+        <div data-role="header">
+            <a href="#log" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" style="font-size:10px"></a>
+            <h1>Welcome To E-FRIDGE</h1>
         </div>
 
-        <div data-role="page" id="signup">
-            <div data-role="header">
-                <a class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" href="#log" style="font-size:10px"></a>
-                <h1>Welcome To E-FRIDGE</h1>
-            </div>
-
-            <div data-role="main" class="ui-content">
-                <div id="pc2">
-                    <img src="image/logo.png" alt="logo" width="110%"/></div>
-                <p>SIGN UP</p>
-                <form method="post" onsubmit="return submitClick()">
-                    <div>
-                        <label>User name:</label>
-                        <input type="text" name="username" id="name">       
-                        <br><label>Password:</label>
-                        <input type="password" name="password" id="password">
-                        <br><label>Confirm password:</label>
-                        <input type="password" name="confirmPW" id="confirm">
+        <div data-role="main" class="ui-content">
+            <div id="pc3" style="width:130%;
+                                 margin-left:-17%;
+                                 transform:translateX(-50%)};">
+                <img src="image/logo.png" alt="logo" width="110%"/></div>
+            <p>SIGN IN</p>
+            <form>
+                <div>
+                    <label>User name:</label>
+                    <input type="text" name="username" style="width:100%" id="name1">       
+                    <br><label>Password:</label>
+                    <input type="password" name="password" id="password1">
+                    <div id="fc">
+                        <a href="https://www.gmail.com" ><img src="image/googleplus_button.png" alt="google" width="150px" height="30px"/></a>
                     </div>
-                    <input type="submit" data-inline="true" value="Submit" onclick="SignUp()">
-                </form>
-                <script src="js/signup.js"></script>
-            </div> 
-        </div>
+                    <br><label for="remember">Remember me?</label>
+                    <input type="checkbox" name="remember" id="remember" value="remember" checked>
 
-        <div data-role="page" id="signin">
-            <div data-role="header">
-                <a href="#log" class="ui-btn ui-corner-all ui-icon-carat-l ui-btn-icon-notext" style="font-size:10px"></a>
-                <h1>Welcome To E-FRIDGE</h1>
-            </div>
+                </div>
+                <input type="submit" data-inline="true" value="Submit" onclick="SignIn()">
+            </form>
+            <script src="js/signOut.js"></script>
+        </div> 
+    </div>
 
-            <div data-role="main" class="ui-content">
-                <div id="pc3" style="width:130%;
-                                     margin-left:-17%;
-                                     transform:translateX(-50%)};">
-                    <img src="image/logo.png" alt="logo" width="110%"/></div>
-                <p>SIGN IN</p>
-                <form>
-                    <div>
-                        <label>User name:</label>
-                        <input type="text" name="username" style="width:100%" id="name1">       
-                        <br><label>Password:</label>
-                        <input type="password" name="password" id="password1">
-                        <div id="fc">
-                            <a href="https://www.gmail.com" ><img src="image/googleplus_button.png" alt="google" width="150px" height="30px"/></a>
-                        </div>
-                        <br><label for="remember">Remember me?</label>
-                        <input type="checkbox" name="remember" id="remember" value="remember" checked>
-
-                    </div>
-                    <input type="submit" data-inline="true" value="Submit" onclick="SignIn()">
-                </form>
-                <script src="js/signOut.js"></script>
-            </div> 
-        </div>
-
-    </body>
+</body>
 </html> 
