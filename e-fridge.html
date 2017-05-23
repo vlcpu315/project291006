@@ -382,7 +382,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var navlist5=document.getElementById("dairylistul");
 	var myArray1ist5=new Array();
 	var ref = firebase.database().ref(userlist);
-	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
+	ref.orderByChild("group").equalTo('Dairy').once("value", function(snapshot) {
 	var packJsonlist5 = snapshot.val();
 	for (var p in packJsonlist5) {
 	ref.child(p).once('value', function(snapshot){
@@ -397,7 +397,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	newChildlist5.setAttribute('class', "ui-first-child ui-last-child");
 	navlist5.appendChild(newChildlist5);
 	temp = document.getElementById('dairylistul');
-	lis = temp.getElementsByTagName('li');
+	list = temp.getElementsByTagName('li');
 	document.getElementById('spandairy').innerHTML=list.length;
 	})};
 	});
@@ -417,9 +417,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var userlist = uid + "list";
 	i=0;
 	var navlist6=document.getElementById("otherslistul");
-	var myArray1ist4=new Array();
+	var myArray1ist6=new Array();
 	var ref = firebase.database().ref(userlist);
-	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
+	ref.orderByChild("group").equalTo('Others').once("value", function(snapshot) {
 	var packJsonlist6 = snapshot.val();
 	for (var p in packJsonlist6) {
 	ref.child(p).once('value', function(snapshot){
@@ -1222,6 +1222,7 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 	var userlist = userid + "list";
 	firebase.database().ref(userid).child($("#item_input").val()).once('value',function(snapshot) {
 	group_name= snapshot.val().group;
+	console.log(group_name);
 		    firebase.database().ref(userlist).child($("#item_input").val()).update({
 
 
