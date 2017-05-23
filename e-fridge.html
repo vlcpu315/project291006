@@ -454,8 +454,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 	//	arr2[i].href = "#new_item";}
 		
 		
-		$(document).on("tap","#listpage",function(){
-		$("li").on("tap",function(){
+		$(document).on("pageshow","#listpage",function(){
+		$("li").on("click",function(){
 		iteminfo_name = $(this).text();
 		document.getElementById("foodinfo").innerHTML = iteminfo_name;
 		document.getElementById("foodinfomodify").innerHTML=iteminfo_name;
@@ -464,16 +464,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var uid = user.uid;
 	var userlist = uid + "list";		
 		firebase.database().ref(userlist).child(iteminfo_name).once('value',function(snapshot) {
-		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
 		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
 		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
-			
-			
-			
-			
-			document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
-			document.getElementById("datepurchase").value=snapshot.val().purchase;
-});
+		document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
+		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
+		document.getElementById("datepurchase").value=snapshot.val().purchase;
+		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
+		});
 		}); 
 		});
 		});
