@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css">
 		<script src="js/jquery.ui.datepicker.js"></script>
 		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
-<<<<<<< HEAD
+
 <!-- link to firebase  -->
 <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 <script>
@@ -83,10 +83,10 @@
 
 
 </script>
-=======
+
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="js/login.js"></script>
->>>>>>> ken516
+
         <style>
             div #content.ui-content{ background: none }      
             .ui-page { 
@@ -208,13 +208,22 @@
 
                         </ul>
 										<script>
+										
+firebase.auth().onAuthStateChanged(function(user) {
 
-  
+    console.log(user.uid)// User is signed in.
+
+
+
+	var userid = user.uid;
+	var userlist = userid + "list";
+	
+	console.log(userlist);
 	let i=0;
 	var navlist=document.getElementById("meatlistul");
 	var myArray1ist=new Array();
-	var ref = firebase.database().ref('user2list');
-	ref.orderByChild("group").equalTo('meat').once("value", function(snapshot) {
+	var ref = firebase.database().ref(userlist);
+	ref.orderByChild("group").equalTo('Meat').once("value", function(snapshot) {
 	var packJsonlist = snapshot.val();
 	
 	for (var p in packJsonlist) {
@@ -229,10 +238,14 @@
 	newChildlist.appendChild(newLinklist);
 	newChildlist.setAttribute('class', "ui-first-child ui-last-child");
 	navlist.appendChild(newChildlist);
-	document.getElementById('spanmeat').innerHTML=i;
-	i++;
+	var temp = document.getElementById('meatlistul');
+	var list = temp.getElementsByTagName('li');
+	document.getElementById('spanmeat').innerHTML=list.length;
+
 	})};
 	//document.getElementById("spanmeat").value=i;
+	});
+	
 	});
 	
 
@@ -245,11 +258,14 @@
                         </ul>
 										<script>
 
-  
+firebase.auth().onAuthStateChanged(function(user) {  
+
+	var uid = user.uid;
+	var userlist = uid + "list";
 	i=0;
 	var navlist2=document.getElementById("vegetablelistul");
 	var myArray1ist2=new Array();
-	var ref = firebase.database().ref('user2list');
+	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Vegetable').once("value", function(snapshot) {
 	var packJsonlist2 = snapshot.val();
 	for (var p in packJsonlist2) {
@@ -264,11 +280,12 @@
 	newChildlist2.appendChild(newLinklist2);
 	newChildlist2.setAttribute('class', "ui-first-child ui-last-child");
 	navlist2.appendChild(newChildlist2);
-	document.getElementById('spanvegetable').innerHTML=i;
-	i++;
+	var temp = document.getElementById('vegetablelistul');
+	var list = temp.getElementsByTagName('li');
+	document.getElementById('spanvegetable').innerHTML=list.length;
 	})};
 	});
-	
+	});	
 
 				</script>						
 						
@@ -280,11 +297,14 @@
                         </ul>
 										<script>
 
-  
+firebase.auth().onAuthStateChanged(function(user) {   
+
+	var uid = user.uid;
+	var userlist = uid + "list";
 	i=0;
 	var navlist3=document.getElementById("seafoodlistul");
 	var myArray1ist3=new Array();
-	var ref = firebase.database().ref('user2list');
+	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Seafood').once("value", function(snapshot) {
 	var packJsonlist3 = snapshot.val();
 	for (var p in packJsonlist3) {
@@ -299,11 +319,12 @@
 	newChildlist3.appendChild(newLinklist3);
 	newChildlist3.setAttribute('class', "ui-first-child ui-last-child");
 	navlist3.appendChild(newChildlist3);
-	document.getElementById('spanseafood').innerHTML=i;
-	i++;
+	var temp = document.getElementById('seafoodlistul');
+	var list = temp.getElementsByTagName('li');
+	document.getElementById('spanseafood').innerHTML=list.length;
 	})};
 	});
-	
+	});		
 
 				</script>	
                     </div>
@@ -314,11 +335,14 @@
                         </ul>
 										<script>
 
-  
+firebase.auth().onAuthStateChanged(function(user) {   
+
+	var uid = user.uid;
+	var userlist = uid + "list";
 	i=0;
 	var navlist4=document.getElementById("fruitlistul");
 	var myArray1ist4=new Array();
-	var ref = firebase.database().ref('user2list');
+	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
 	var packJsonlist4 = snapshot.val();
 	for (var p in packJsonlist4) {
@@ -333,11 +357,13 @@
 	newChildlist4.appendChild(newLinklist4);
 	newChildlist4.setAttribute('class', "ui-first-child ui-last-child");
 	navlist4.appendChild(newChildlist4);
-	document.getElementById('spanfruit').innerHTML=i;
-	i++;
+	var temp = document.getElementById('fruitlistul');
+	var list = temp.getElementsByTagName('li');
+	document.getElementById('spanfruit').innerHTML=list.length;
+
 	})};
 	});
-	
+	});
 
 				</script>	
                     </div>
@@ -348,11 +374,14 @@
                         </ul>
 										<script>
 
-  
+firebase.auth().onAuthStateChanged(function(user) {   
+
+	var uid = user.uid;
+	var userlist = uid + "list";
 	i=0;
 	var navlist5=document.getElementById("dairylistul");
 	var myArray1ist5=new Array();
-	var ref = firebase.database().ref('user2list');
+	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
 	var packJsonlist5 = snapshot.val();
 	for (var p in packJsonlist5) {
@@ -367,11 +396,12 @@
 	newChildlist5.appendChild(newLinklist5);
 	newChildlist5.setAttribute('class', "ui-first-child ui-last-child");
 	navlist5.appendChild(newChildlist5);
-	document.getElementById('spandairy').innerHTML=i;
-	i++;
+	temp = document.getElementById('dairylistul');
+	lis = temp.getElementsByTagName('li');
+	document.getElementById('spandairy').innerHTML=list.length;
 	})};
 	});
-	
+	});	
 
 				</script>	
                     </div>
@@ -381,11 +411,14 @@
                         </ul>
 										<script>
 
-  
+firebase.auth().onAuthStateChanged(function(user) {    
+
+	var uid = user.uid;
+	var userlist = uid + "list";
 	i=0;
 	var navlist6=document.getElementById("otherslistul");
 	var myArray1ist4=new Array();
-	var ref = firebase.database().ref('user2list');
+	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
 	var packJsonlist6 = snapshot.val();
 	for (var p in packJsonlist6) {
@@ -400,16 +433,55 @@
 	newChildlist6.appendChild(newLinklist6);
 	newChildlist6.setAttribute('class', "ui-first-child ui-last-child");
 	navlist6.appendChild(newChildlist6);
-	document.getElementById('spanothers').innerHTML=i;
-	i++;
+	var temp = document.getElementById('otherslistul');
+	var list = temp.getElementsByTagName('li');
+	document.getElementById('spanothers').innerHTML=list.length;
+
 	})};
 	});
-	
+	});		
 
 				</script>	
+	<script>
+	//	var arr1 = document.getElementsByName("food_list");
+	//	for (j = 0; j < arr1.length; j++) {
+	//	var arr2 = arr1[j].getElementsByTagName("a");
+	//	for (i = 0; i < arr2.length - 1; i++) {
+	//	arr2[i].href = "#add";
+	//	arr2[i].class="ui-btn ui-btn-icon-right ui-icon-plus ui-btn-icon-notext"}
+	//	arr2[i].href = "#new_item";}
+		
+		
+		$(document).on("tap","#listpage",function(){
+		$("li").on("tap",function(){
+		iteminfo_name = $(this).text();
+		document.getElementById("foodinfo").innerHTML = iteminfo_name;
+		document.getElementById("foodinfomodify").innerHTML=iteminfo_name;
+		firebase.auth().onAuthStateChanged(function(user) {    
+
+	var uid = user.uid;
+	var userlist = uid + "list";		
+		firebase.database().ref(userlist).child(iteminfo_name).once('value',function(snapshot) {
+		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
+		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
+		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
+			
+			
+			
+			
+			document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
+			document.getElementById("datepurchase").value=snapshot.val().purchase;
+});
+		}); 
+		});
+		});
+		
+
+
+	</script>
                     </div>
                 </div>
-                <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext" style="font-size:24px">Plus Icon</a>
+                <a href="#library" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext" style="font-size:24px">Plus Icon</a>
             </div>
 
             <div data-role="footer" id="footer" data-theme="a">
@@ -427,27 +499,30 @@
             <a href="#listpage" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" id="back">BACK</a> 
             <table>
                 <tr>
-                    <th style="text-align:left;font-size:20px;text-decoration:underline">Beef</th>
+                    <th style="text-align:left;font-size:20px;text-decoration:underline" id="foodinfo"></th>
                 </tr>
                 <tr>
                     <th>Quantity:</th>
-                    <td>2 lb</td>
+                    <td id="quantityinfo"></td>
                 </tr>
                 <tr>
                     <th>Purchase:</th>
-                    <td>03/04/2017</td>
+                    <td id="purchaseDateinfo"></td>
                 </tr>
                 <tr>
-                    <th>Expired:</th>
-                    <td>03/10/2017</td>
+                    <th>Period:</th>
+                    <td id="peridoinfo"></td>
                 </tr>
             </table>
-            <div data-role="button" class="center-button1">
-                <a href="#pageConfirm" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">Delete</a>
+			
+			
+			
+             <div data-role="button" class="center-button1">
+                <a href="#listpage" data-role="button" data-inline="true" id="delete">Delete</a>
                 <a href="#modify" data-role="button" data-inline="true" data-theme="a">Modify</a>
             </div> 
         </div>
-        <div data-role="dialog" id="pageConfirm">
+        <!--<div data-role="dialog" id="pageConfirm">
             <div data-role="header" data-theme="a">
                 <h1>Dialog</h1>
 
@@ -457,34 +532,73 @@
                 <p><small>The item will be deleted permanently.</small></p>
                 <a href="#listpage" data-role="button" data-theme="b">Yes</a>       
                 <a href="#InfomationPage" data-role="button" data-rel="back" data-theme="c">No</a>    
-            </div>
+            </div>-->
+			<script>
+
+
+			$(document).on("pagecreate", "#InfomationPage", function(){
+                        $("#delete").on("click", function(){
+						firebase.auth().onAuthStateChanged(function(user){ 
+						var uid = user.uid;
+						var userlist = uid + "list";
+						var food_delete=document.getElementById("foodinfo").innerHTML;
+						firebase.database().ref(userlist).child(food_delete).on('value', function(snapshot){
+						snapshot.ref.remove();
+						window.location.reload();
+						});
+                        });
+                    });
+					});
+
+			</script>
         </div>
         <div data-role="page" id="modify">
             <a href="#InfomationPage" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" id="back">BACK</a>
             <form action="" method="post" id="formModify">
                 <table id="pagefour1">
                     <tr>
-                        <th><input type="text" name="name" id="beef" value="Beef" ></th>
+                        <th id="foodinfomodify"></th>
                     </tr>
                     <tr>
                         <th>Quantity:</th>
-                        <td><input type="number" name="quantity"></td>
+                        <td><input type="number" name="quantity" id="quantityinfomodify"></td>
                     </tr>
                     <tr>
                         <th>Purchase:</th>
-                        <td><input type="date" name="date" id="date" value="" /></td>
+                        <td><input type="date" name="date" id="datepurchase" value="" /></td>
                     </tr>
                     <tr>
                         <th>Expired:</th>
-                        <td><input type="date" name="date" id="date" value="" /></td>
+                        <td><input type="date" name="date" id="dateexpiration" value="" /></td>
                     </tr>
 
                 </table>  
                 <div data-role="button" class="center-button">
-                    <a href="index.html" data-role="button" >Confirm</a>
+                    <a href="#listpage" data-role="button" id="confirmmodification">Confirm</a>
                 </div>
             </form>
         </div>
+		<script>
+			$(document).on("pagecreate", "#modify", function(){
+                        $("#confirmmodification").on("click", function(){
+						firebase.auth().onAuthStateChanged(function(user){ 
+						var uid = user.uid;
+						var userlist = uid + "list";	
+		var iteminfo_modify=document.getElementById("foodinfomodify").innerHTML;
+		var newquantity=document.getElementById("quantityinfomodify").value;
+		var newpurchase=document.getElementById("datepurchase").value;
+
+		firebase.database().ref(userlist).child(iteminfo_modify).update({
+
+      "quantity" : newquantity,
+      "purchase" : newpurchase
+    });
+  });
+});
+});
+
+		
+		</script>
 		
 <!--Grace-->
 <div data-role="page" id="confirmPW">
@@ -743,17 +857,30 @@
 				
 				<ul id="meatul" data-role="listview" name="food_list">
 					<li data-icon="plus" id="meatadd"><a href="#">+</a></li>
-					
+					<script>
+
+  $("#meatadd").on("tap",function(){
+document.getElementById("group_name_new").innerHTML = "Meat";
+  }); 
+
+
+					</script>
 				</ul>
 				<script>
 
-  
+ firebase.auth().onAuthStateChanged(function(user) {
+
+    //console.log(user.uid)// User is signed in.
+
+
+
+	var userid = user.uid; 
 	i=0;
 	var nav=document.getElementById("meatul");
 	var plus=document.getElementById("meatadd");
 	let myArray=new Array();
-	var ref = firebase.database().ref('user2');
-	ref.orderByChild("group").equalTo('meat').once("value", function(snapshot) {
+	var ref = firebase.database().ref(userid);
+	ref.orderByChild("group").equalTo('Meat').once("value", function(snapshot) {
 	var packJson = snapshot.val();
 	for (var p in packJson) {
 	ref.child(p).once('value', function(snapshot){
@@ -772,18 +899,7 @@
 	})};
 	});
 	
-
-
-	//var newText2=document.createTextNode("+");
-	//var newLink2=document.createElement('a');
-	//var newChild2=document.createElement('li');
-	//newLink2.appendChild(newText2);  
-	//newLink2.setAttribute('href',"#");  
-	//newChild2.appendChild(newLink2);  
-	//nav.appendChild(newChild2);
-
-	
-	
+	});
 
 	
 				</script>
@@ -793,15 +909,24 @@
 				<ul id="vegetableul" data-role="listview" name="food_list">
 
 					<li data-icon="plus" id="vegetableadd"><a href="#">+</a></li>
+					<script>
+
+  $("#vegetableadd").on("tap",function(){
+document.getElementById("group_name_new").innerHTML = "Vegetable";
+  }); 
+
+
+					</script>
 				</ul>
 				<script>
 
-  
+ firebase.auth().onAuthStateChanged(function(user) {  
+	var userid = user.uid; 
 	i=0;
 	var nav2=document.getElementById("vegetableul");
 	var plus2=document.getElementById("vegetableadd");
 	let myArray2=new Array();
-	var ref = firebase.database().ref('user2');
+	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Vegetable').once("value", function(snapshot) {
 	var packJson2 = snapshot.val();
 	for (var p in packJson2) {
@@ -820,38 +945,35 @@
 	i++;
 	})};
 	});
-
+	});
 	
 				</script>
 			</div>
 			<div data-role="collapsible">
 				<h4>Seafood</h4>
-<<<<<<< HEAD
+
 				<ul id="seafoodul" data-role="listview" name="food_list">
 
 					<li data-icon="plus" id="seafoodadd"><a href="#">+</a></li>
-=======
-				<ul data-role="listview" name="food_list">
-					<li><a href="#">Salmon</a></li>
-					<li><a href="#">Tuna</a></li>
-					<li><a href="#">Lobster</a></li>
-					<li><a href="#">Crabs</a></li>
-					<li><a href="#">Shrimps</a></li>
-					<li><a href="#">Cod</a></li>
-					<li><a href="#">Flounder</a></li>
-					<li><a href="#">Catfish</a></li>
-					<li><a href="#">Scallop</a></li>
-					<li><a href="#">Sea Bass</a></li>
-					<li data-icon="plus"><a href="#">+</a></li>
->>>>>>> 2405d4b93131f009e08ebcc6847e5842c44d0328
+
+					<script>
+
+  $("#seafoodadd").on("tap",function(){
+document.getElementById("group_name_new").innerHTML = "Seafood";
+  }); 
+
+
+					</script>
 				</ul>
 				<script>
   
+firebase.auth().onAuthStateChanged(function(user) {  
+	var userid = user.uid; 
 	i=0;
 	var nav3=document.getElementById("seafoodul");
 	var plus3=document.getElementById("seafoodadd");
 	let myArray3=new Array();
-	var ref = firebase.database().ref('user2');
+	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Seafood').once("value", function(snapshot) {
 	var packJson3 = snapshot.val();
 	for (var p in packJson3) {
@@ -870,7 +992,7 @@
 	i++;
 	})};
 	});
-
+	});
 				</script>
 			</div>
 			<div data-role="collapsible">
@@ -878,14 +1000,25 @@
 				<ul id="fruitul" data-role="listview" name="food_list">
 
 					<li data-icon="plus" id="fruitadd"><a href="#">+</a></li>
+
+					<script>
+
+  $("#fruitadd").on("tap",function(){
+document.getElementById("group_name_new").innerHTML = "Fruit";
+  }); 
+
+
+					</script>
 				</ul>
 				<script>
   
+firebase.auth().onAuthStateChanged(function(user) {  
+	var userid = user.uid; 
 	i=0;
 	var nav4=document.getElementById("fruitul");
 	var plus4=document.getElementById("fruitadd");
 	let myArray4=new Array();
-	var ref = firebase.database().ref('user2');
+	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
 	var packJson4 = snapshot.val();
 	for (var p in packJson4) {
@@ -904,7 +1037,7 @@
 	i++;
 	})};
 	});
-
+	});
 				</script>
 			</div>
 			<div data-role="collapsible">
@@ -912,14 +1045,25 @@
 				<ul id="dairyul" data-role="listview" name="food_list">
 
 					<li data-icon="plus" id="dairyadd"><a href="#">+</a></li>
+
+					<script>
+
+  $("#dairyadd").on("tap",function(){
+document.getElementById("group_name_new").innerHTML = "Dairy";
+  }); 
+
+
+					</script>
 				</ul>
 				<script>
   
+firebase.auth().onAuthStateChanged(function(user) {  
+	var userid = user.uid; 
 	i=0;
 	var nav5=document.getElementById("dairyul");
 	var plus5=document.getElementById("dairyadd");
 	let myArray5=new Array();
-	var ref = firebase.database().ref('user2');
+	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Dairy').once("value", function(snapshot) {
 	var packJson5 = snapshot.val();
 	for (var p in packJson5) {
@@ -938,7 +1082,7 @@
 	i++;
 	})};
 	});
-
+	});
 				</script>
 			</div>
 			<div data-role="collapsible">
@@ -946,14 +1090,25 @@
 				<ul id="othersul" data-role="listview" name="food_list">
 
 					<li data-icon="plus" id="othersadd"><a href="#">+</a></li>
+
+					<script>
+
+  $("#othersadd").on("tap",function(){
+document.getElementById("group_name_new").innerHTML = "Others";
+  }); 
+
+
+					</script>
 				</ul>
 				<script>
   
+firebase.auth().onAuthStateChanged(function(user) {  
+	var userid = user.uid; 
 	i=0;
 	var nav6=document.getElementById("othersul");
 	var plus6=document.getElementById("othersadd");
 	let myArray6=new Array();
-	var ref = firebase.database().ref('user2');
+	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('others').once("value", function(snapshot) {
 	var packJson6 = snapshot.val();
 	for (var p in packJson6) {
@@ -972,7 +1127,7 @@
 	i++;
 	})};
 	});
-
+	});
 				</script>
 			</div>
 		</div>
@@ -985,11 +1140,15 @@
 		arr2[i].class="ui-btn ui-btn-icon-right ui-icon-plus ui-btn-icon-notext"}
 		arr2[i].href = "#new_item";}
 		
-		$(document).on("tap","#library",function(){
-		$("li").on("taphold",function(){
-		$(this).remove();
-		});                       
-		});
+//		$(document).on("#library",function(){
+//		$("li").on("tap",function(){
+//		item_remove_name= $(this).text();
+//		alert(item_remove_name);
+		//var ref = firebase.database().ref(userid);
+		//ref.child(item_remove_name).remove;
+		//window.location.reload();
+//		});                       
+//		});
 		
 		$(document).on("tap","#library",function(){
 		$("li").on("tap",function(){
@@ -1040,6 +1199,9 @@
 					<a href="#library" data-role="button" id="addtolist">add</a>
 					<!--<input type="submit" value="Add" style="margin:0 auto;">-->
 					</form>
+										<br>
+					<a href="#library" data-role="button" id="deletetolist">Permanently delete this food class!</a>
+					
 				</div>
 <script type="text/javascript">
 
@@ -1055,15 +1217,40 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 		$("#addtolist").on("tap",function(){
 		var purchaseDate=document.getElementById("today_date").value;
 		var purchaseQuantity=document.getElementById("spin").value;
-		    firebase.database().ref('user2list').child($("#item_input").val()).update({
-      "group" : "meat",
+		firebase.auth().onAuthStateChanged(function(user) {
+	var userid = user.uid;
+	var userlist = userid + "list";
+	firebase.database().ref(userid).child($("#item_input").val()).once('value',function(snapshot) {
+	group_name= snapshot.val().group;
+		    firebase.database().ref(userlist).child($("#item_input").val()).update({
+
+
+      "group" : group_name,
       "quantity" : purchaseQuantity,
 	  "purchase" : purchaseDate
 	});
-	window.location.reload();
+		window.location.reload();
+	});
+	});
+
 		});                       
 		});
 		
+
+
+
+			$(document).on("pagecreate", "#add", function(){
+                        $("#deletetolist").on("click", function(){
+						firebase.auth().onAuthStateChanged(function(user){ 
+						var uid = user.uid;
+						var foodlib_delete=document.getElementById("item_input").value;
+						firebase.database().ref(uid).child(foodlib_delete).on('value', function(snapshot){
+						snapshot.ref.remove();
+						window.location.reload();
+						});
+                        });
+                    });
+					});
 
 
 </script>
@@ -1084,11 +1271,13 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 			<label for="name">Name:</label>
 			<input type="text" name="name" id="name">
 			<br>
+			<p>Group: </p><p id="group_name_new"></p>
+			<br>
 			<label for="period">Period: (Days)</label>
 			<input type="text" name="period" id="period">
 			<br>
-			<label for="info">Additional Information:</label>
-			<textarea name="addinfo" id="info" style="height: 10em;"></textarea>
+			<!--<label for="info">Additional Information:</label>
+			<textarea name="addinfo" id="info" style="height: 10em;"></textarea>-->
 			<br>
 			<a href="#library" data-role="button" id="addtolib">add</a>
 		</div>
@@ -1101,11 +1290,15 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 		$("#addtolib").on("tap",function(){
 		var itemname=document.getElementById("name").value;
 		var itemperiod=document.getElementById("period").value;
-    firebase.database().ref('user2').child($("#name").val()).update({
-      "group" : "meat",
+		var itemgroup=document.getElementById("group_name_new").innerHTML;
+	firebase.auth().onAuthStateChanged(function(user) {
+	var userid = user.uid;
+    firebase.database().ref(userid).child($("#name").val()).update({
+      "group" : itemgroup,
       "period" : itemperiod
 	});
 	window.location.reload();
+	});
 		});                       
 		});
 
