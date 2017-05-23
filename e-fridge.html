@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.theme.css" />
+		
+		<link rel="stylesheet" href="css/jquery.e-calendar.css"/>
 		<script src="js/jquery.mobile-1.4.5/jquery-1.12.4.js"></script>
 		<script src="js/datepicker.js"></script>
 		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -15,7 +17,9 @@
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css">
 		<script src="js/jquery.ui.datepicker.js"></script>
 		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
-<<<<<<< HEAD
+		<script type="text/javascript" src="js/jquery.e-calendar.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+
 <!-- link to firebase  -->
 <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
 <script>
@@ -83,10 +87,10 @@
 
 
 </script>
-=======
+
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="js/login.js"></script>
->>>>>>> ken516
+
         <style>
             div #content.ui-content{ background: none }      
             .ui-page { 
@@ -230,7 +234,7 @@
 	newChildlist.setAttribute('class', "ui-first-child ui-last-child");
 	navlist.appendChild(newChildlist);
 	document.getElementById('spanmeat').innerHTML=i;
-	i++;
+
 	})};
 	//document.getElementById("spanmeat").value=i;
 	});
@@ -265,7 +269,7 @@
 	newChildlist2.setAttribute('class', "ui-first-child ui-last-child");
 	navlist2.appendChild(newChildlist2);
 	document.getElementById('spanvegetable').innerHTML=i;
-	i++;
+
 	})};
 	});
 	
@@ -300,7 +304,7 @@
 	newChildlist3.setAttribute('class', "ui-first-child ui-last-child");
 	navlist3.appendChild(newChildlist3);
 	document.getElementById('spanseafood').innerHTML=i;
-	i++;
+
 	})};
 	});
 	
@@ -334,7 +338,7 @@
 	newChildlist4.setAttribute('class', "ui-first-child ui-last-child");
 	navlist4.appendChild(newChildlist4);
 	document.getElementById('spanfruit').innerHTML=i;
-	i++;
+
 	})};
 	});
 	
@@ -368,7 +372,7 @@
 	newChildlist5.setAttribute('class', "ui-first-child ui-last-child");
 	navlist5.appendChild(newChildlist5);
 	document.getElementById('spandairy').innerHTML=i;
-	i++;
+
 	})};
 	});
 	
@@ -401,7 +405,7 @@
 	newChildlist6.setAttribute('class', "ui-first-child ui-last-child");
 	navlist6.appendChild(newChildlist6);
 	document.getElementById('spanothers').innerHTML=i;
-	i++;
+
 	})};
 	});
 	
@@ -1134,7 +1138,7 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 		  <div data-role="content">
 			
 				
-			 <div data-role="date" data-inline="true">
+			 <div id="calendar">
 			</div>
 		  </div>
 		  <div data-role="footer" id="footer">
