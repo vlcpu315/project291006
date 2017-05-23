@@ -29,6 +29,7 @@ function SignUp(){
     });
 
 };
+
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
         window.location="e-fridge.html";
