@@ -1,5 +1,4 @@
 
-
 (function ($) {
 
     var eCalendar = function (options, object) {
@@ -13,6 +12,7 @@
         var instance = object;
 
         var settings = $.extend({}, $.fn.eCalendar.defaults, options);
+        
 
         function lpad(value, length, pad) {
             if (typeof pad == 'undefined') {
@@ -118,60 +118,131 @@
                 cBody.append(cWeekDay);
                 dayOfWeek++;
             }
-            var day = 1;
+            
+            
+                        var day = 1;
             var dayOfNextMonth = 1;
-            for (var i = 0; i < 42; i++) {
+             for (var i = 0; i < 42; i++) {
                 var cDay = $('<div/>');
                 if (i < dWeekDayOfMonthStart) {
                     cDay.addClass('c-day-previous-month c-pad-top');
                     cDay.html(dLastDayOfPreviousMonth++);
                 } else if (day <= dLastDayOfMonth) {
+                    
                     cDay.addClass('c-day c-pad-top');
                     if (day == dDay && adMonth == dMonth && adYear == dYear) {
                         cDay.addClass('c-today');
                     }
-                    for (var j = 0; j < settings.events.length; j++) {
-                        var d = settings.events[j].datetime;
+                     firebase.auth().onAuthStateChanged(function(user) {
+
+                     var userid = user.uid;
+                     var userlist = userid + "list";
+                        firebase.database().ref(userlist).on('child_added', function(snapshot) {
+
+                             var d=new Date();
+                             var datestring=snapshot.val().expiration;
+
+
+                             if (datestring.length==9) {
+                             var setM=datestring.substring(0,1);
+                             var setD=datestring.substring(2,4);
+                             var setY=datestring.substring(5);
+                             d.setDate(setD);
+                             d.setMonth(setM - 1); 
+                             d.setYear(setY); 
+                             };
+                              if (datestring.length==10) {
+                             var setM=datestring.substring(0,2);
+                             var setD=datestring.substring(3,5);
+                             var setY=datestring.substring(6);
+                             d.setDate(setD);
+                             d.setMonth(setM - 1); 
+                             d.setYear(setY); 
+                             };
+                    for (var j = 0; j < snapshot.numChildren(); j++) {
+                        
                         if (d.getDate() == day && d.getMonth() == dMonth && d.getFullYear() == dYear) {
                             cDay.addClass('c-event').attr('data-event-day', d.getDate());
                             cDay.on('mouseover', mouseOverEvent).on('mouseleave', mouseLeaveEvent);
                         }
-                    }
+                    }             
+                });
+            }); 
+           
                     cDay.html(day++);
+                
+            
                 } else {
                     cDay.addClass('c-day-next-month c-pad-top');
                     cDay.html(dayOfNextMonth++);
                 }
                 cBody.append(cDay);
             }
+                        
+            
+            
             var eventList = $('<div/>').addClass('c-event-list');
-            for (var i = 0; i < settings.events.length; i++) {
-                var d = settings.events[i].datetime;
+            
+            firebase.auth().onAuthStateChanged(function(user) {
+
+                 var userid = user.uid;
+                 var userlist = userid + "list";
+                    firebase.database().ref(userlist).on('child_added', function(snapshot) {
+
+                         var d=new Date();
+                         var datestring=snapshot.val().expiration;
+
+
+                         if (datestring.length==9) {
+                         var setM=datestring.substring(0,1);
+                         var setD=datestring.substring(2,4);
+                         var setY=datestring.substring(5);
+                         d.setDate(setD);
+                         d.setMonth(setM - 1); 
+                         d.setYear(setY); 
+                         };
+                          if (datestring.length==10) {
+                         var setM=datestring.substring(0,2);
+                         var setD=datestring.substring(3,5);
+                         var setY=datestring.substring(6);
+                         d.setDate(setD);
+                         d.setMonth(setM - 1); 
+                         d.setYear(setY); 
+                         };
+                        
+                //teststring= snapshot.key+snapshot.val().expiration;
+
+                 //test.push(teststring);
+                
+            
+            //for (var i = 0; i < settings.events.length; i++) 
+
                 if (d.getMonth() == dMonth && d.getFullYear() == dYear) {
-                    var date = lpad(d.getDate(), 2) + '/' + lpad(d.getMonth() + 1, 2);
+                    var date = lpad(d.getDate(), 2) + '/' + lpad(d.getMonth()+1, 2);
+                    var keyyes = snapshot.key;
                     var item = $('<div/>').addClass('c-event-item');
-                    var title = $('<div/>').addClass('title').html(date + '  ' + settings.events[i].title + '<br/>');
-                    var description = $('<div/>').addClass('description').html(settings.events[i].description + '<br/>');
+                    var title = $('<div/>').addClass('title').html(date + '   ' + keyyes + '<br/>');          
                     item.attr('data-event-day', d.getDate());
                     item.on('mouseover', mouseOverItem).on('mouseleave', mouseLeaveItem);
-                    item.append(title).append(description);
+                    item.append(title);
 
                     // Add the url to the description if is set
-                    if( settings.events[i].url !== undefined )
+                   /** if( settings.events[i].url !== undefined )
                     {
                         /**
                          * If the setting url_blank is set and is true, the target of the url
                          * will be "_blank"
                          */
-                        type_url = settings.events[i].url_blank !== undefined && 
+                        /**type_url = settings.events[i].url_blank !== undefined && 
                                    settings.events[i].url_blank === true ? 
                                    '_blank':'';
                         description.wrap( '<a href="'+ settings.events[i].url +'" target="'+type_url+'" ></a>' );
-                    }
+                    }**/
 
                     eventList.append(item);
                 }
-            }
+                });
+            });
             $(instance).addClass('calendar');
             cEventsBody.append(eventList);
             $(instance).html(cBody).append(cEvents);
@@ -185,20 +256,43 @@
             return eCalendar(oInit, $(this));
         });
     };
-
+	
+	
+   
+    
+    /**var test=[
+            {title: 'Beef' , description: '', datetime: new Date(2017, new Date().getMonth(), 12)},
+            {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
+            {title: 'Beef', description: 'beef2', datetime: new Date(2017, new Date().getMonth(), 31)},
+			 {title: 'Test', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
+			  {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
+			   {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)}
+        ];**/
+	
     // plugin defaults
+	
+        
     $.fn.eCalendar.defaults = {
         weekDays: ['Sun', 'Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat'],
         months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'Octorber', 'November', 'December'],
         textArrows: {previous: '<', next: '>'},
         eventTitle: 'Expiring foods',
         url: '',
-        events: [
-            {title: 'Beef', description: '', datetime: new Date(2017, new Date().getMonth(), 12)},
-            {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
-            {title: 'Beef', description: 'beef2', datetime: new Date(2017, new Date().getMonth(), 31)}
-        ],
+        
+        //events:	
+		//[
+        //    {title: 'Beef' , description: '', datetime: new Date(2017, new Date().getMonth(), 12)}
+         //   {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
+        //    {title: 'Beef', description: 'beef2', datetime: new Date(2017, new Date().getMonth(), 31)},
+		//	 {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
+		//	  {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
+		//	   {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)}
+        //],
         firstDayOfWeek: 0
     };
+    
+   
 
+	
+	
 }(jQuery));

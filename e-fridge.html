@@ -2,12 +2,16 @@
 <html>
     <head>
         <title>main page</title>
+<<<<<<< HEAD
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:url" content="http://e-fridge-web.tk/" />
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="E-Fridge"/>
         <meta property="og:description" content="A Smart Food Saver"/>
         <meta property="og:image" content="image/logo.png"/>
+=======
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+>>>>>>> Vic522
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
 <<<<<<< HEAD
@@ -21,11 +25,13 @@
         <script src="js/jquery.mobile.subpage.js"></script>
 		<script src="js/jquery.ui.datepicker.js"></script>
 		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
-		<script type="text/javascript" src="js/jquery.e-calendar.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
 
+		<script type="text/javascript" src="js/index.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="js/login.js"></script>
 <!-- link to firebase  -->
 <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+		
 <script>
   // Initialize Firebase
   var config = {
@@ -48,7 +54,10 @@
     //         firebase.database().ref('lib').once('value', function(snapshot) {
     //          firebase.database().ref().child('user2').set(snapshot.val());
     //        });
+
   
+
+
     // 3 write new data into user2
     //firebase.database().ref().child('user2').update({
     //    "Egg" : {
@@ -56,6 +65,14 @@
     //  "period" : 30
     //}
 	//});
+	
+	// 4 date calculate
+	//  var dtest=new Date();
+	//dtest.setDate(dtest.getDate() + 10);
+	//firebase.database().ref().child('user2').update({
+    //"datetest" : dtest,
+	//});
+
 	
 	//let i=0;
 	//var myArray=new Array()
@@ -87,13 +104,31 @@
 	//  });
 
 
+var eventlist=new Array();
 
+firebase.auth().onAuthStateChanged(function(user) {
+
+
+
+
+	var userid = user.uid;
+	var userlist = userid + "list";
+    firebase.database().ref(userlist).on('child_added', function(snapshot) {
+  console.log(snapshot.key);
+  console.log(snapshot.val().expiration);
+  
+teststring=snapshot.key + snapshot.val().expiration;
+	
+	eventlist.push(teststring);
+});
+});
+
+console.log(eventlist);
 
 
 </script>
+<script type="text/javascript" src="js/jquery.e-calendar.js"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-        <script src="js/login.js"></script>
 
 =======
         <link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
@@ -259,7 +294,7 @@
             </div>
             <div data-role="content" id="content">
 
-                <a href="#listpage" class="ui-btn">+</a>
+                <a href="#library" class="ui-btn">+</a>
 
             </div>
 
@@ -313,11 +348,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var navlist=document.getElementById("meatlistul");
 	var myArray1ist=new Array();
 	var ref = firebase.database().ref(userlist);
-	ref.orderByChild("group").equalTo('Meat').once("value", function(snapshot) {
+	ref.orderByChild("group").equalTo('Meat').on("value", function(snapshot) {
 	var packJsonlist = snapshot.val();
 	
 	for (var p in packJsonlist) {
-	ref.child(p).once('value', function(snapshot){
+	ref.child(p).on('value', function(snapshot){
 	myArray1ist[i]=snapshot.key;
 	var newTextlist=document.createTextNode(myArray1ist[i]);
 	var newLinklist=document.createElement('a');
@@ -710,12 +745,22 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var uid = user.uid;
 	var userlist = uid + "list";		
 		firebase.database().ref(userlist).child(iteminfo_name).once('value',function(snapshot) {
+<<<<<<< HEAD
 		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
 		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
 		document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
 		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
 		document.getElementById("datepurchase").value=snapshot.val().purchase;
 		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
+=======
+		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
+		document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
+		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
+		document.getElementById("datepurchase").value=snapshot.val().purchase;
+		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
+		document.getElementById("expiredinfo").innerHTML=snapshot.val().expiration;
+		document.getElementById("dateexpiration").value=snapshot.val().expiration;
+>>>>>>> Vic522
 		});
 		}); 
 		});
@@ -785,11 +830,11 @@ firebase.auth().onAuthStateChanged(function(user) {
                     <td id="purchaseDateinfo"></td>
                 </tr>
                 <tr>
-                    <th>Period:</th>
-                    <td id="peridoinfo"></td>
+                    <th>Expired:</th>
+                    <td id="expiredinfo"></td>
                 </tr>
             </table>
-			
+
 			
 			
              <div data-role="button" class="center-button1">
@@ -840,11 +885,11 @@ firebase.auth().onAuthStateChanged(function(user) {
                     </tr>
                     <tr>
                         <th>Purchase:</th>
-                        <td><input type="date" name="date" id="datepurchase" value="" /></td>
+                        <td><input type="text" class="date-input-css" id="datepurchase" value="" style="display: inline-block;"/></td>
                     </tr>
                     <tr>
                         <th>Expired:</th>
-                        <td><input type="date" name="date" id="dateexpiration" value="" /></td>
+                        <td><input type="text" class="date-input-css" id="dateexpiration" value="" style="display: inline-block;"/></td>
                     </tr>
 
                 </table>  
@@ -863,11 +908,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 		var iteminfo_modify=document.getElementById("foodinfomodify").innerHTML;
 		var newquantity=document.getElementById("quantityinfomodify").value;
 		var newpurchase=document.getElementById("datepurchase").value;
-
+		var newexpiration=document.getElementById("dateexpiration").value;
 		firebase.database().ref(userlist).child(iteminfo_modify).update({
 
       "quantity" : newquantity,
-      "purchase" : newpurchase
+      "purchase" : newpurchase,
+	  "expiration" : newexpiration
     });
   });
 });
@@ -1171,7 +1217,7 @@ document.getElementById("group_name_new").innerHTML = "Meat";
 	newChild.setAttribute('class', "ui-first-child ui-last-child");
 	nav.appendChild(newChild);
 	nav.insertBefore(newChild,plus);
-	i++;
+
 	})};
 	});
 	
@@ -1218,7 +1264,7 @@ document.getElementById("group_name_new").innerHTML = "Vegetable";
 	newChild2.setAttribute('class', "ui-first-child ui-last-child");
 	nav2.appendChild(newChild2);
 	nav2.insertBefore(newChild2,plus2);
-	i++;
+
 	})};
 	});
 	});
@@ -1265,7 +1311,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	newChild3.setAttribute('class', "ui-first-child ui-last-child");
 	nav3.appendChild(newChild3);
 	nav3.insertBefore(newChild3,plus3);
-	i++;
+
 	})};
 	});
 	});
@@ -1310,7 +1356,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	newChild4.setAttribute('class', "ui-first-child ui-last-child");
 	nav4.appendChild(newChild4);
 	nav4.insertBefore(newChild4,plus4);
-	i++;
+
 	})};
 	});
 	});
@@ -1355,7 +1401,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	newChild5.setAttribute('class', "ui-first-child ui-last-child");
 	nav5.appendChild(newChild5);
 	nav5.insertBefore(newChild5,plus5);
-	i++;
+
 	})};
 	});
 	});
@@ -1400,7 +1446,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	newChild6.setAttribute('class', "ui-first-child ui-last-child");
 	nav6.appendChild(newChild6);
 	nav6.insertBefore(newChild6,plus6);
-	i++;
+
 	})};
 	});
 	});
@@ -1430,8 +1476,18 @@ firebase.auth().onAuthStateChanged(function(user) {
 		$("li").on("tap",function(){
 		item_name = $(this).text();
 		document.getElementById("item_input").value = item_name;
+						firebase.auth().onAuthStateChanged(function(user) {
+	var userid = user.uid;
+	var userlist = userid + "list";
+	var path=document.getElementById("item_input").value ;
+	firebase.database().ref(userid).child(path).once('value',function(snapshot) {
+	document.getElementById("spin2").value=snapshot.val().period;
+	});
+	});
 		}); 
 		});
+		
+
 
 	</script>
 	  </div>
@@ -1459,7 +1515,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 					<label for="item">Item:</label>
 					<input type="text" name="item" id="item_input">
 					<br>
-					<label for="Quantity">Quantity:</label>
+					<label for="spin">Quantity: (lbs)</label>
 					<input type="text" data-role="spinbox" name="spin" id="spin" value="1" min="1" max="100" />
 						<br>
 					<label for="Phurchase" style="display: inline-block;">Purchase date:</label>
@@ -1467,27 +1523,34 @@ firebase.auth().onAuthStateChanged(function(user) {
 					<input type="text" class="date-input-css" id="today_date" style="display: inline-block;">
 
 					<br>
-					<label for="Expired" style="display: inline-block;">Expired date:</label>
-					<a href="#" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-notext" style="display: inline-block;float: right;position: relative;top: -15px;right: 7px;">Calendar Icon</a>
-					<input type="text" class="date-input-css" id="next_month" style="display: inline-block;">
+					<label for="spin2" style="display: inline-block;">Period: (days)</label>
+
+					<input type="text" data-role="spinbox" name="spin2" id="spin2"  min="1" max="10000000" />
 
 					<br>
 					<a href="#library" data-role="button" id="addtolist">add</a>
 					<!--<input type="submit" value="Add" style="margin:0 auto;">-->
 					</form>
 										<br>
-					<a href="#library" data-role="button" id="deletetolist">Permanently delete this food class!</a>
+					<a href="#library" data-role="button" id="deletetolist">delete this food class</a>
 					
 				</div>
 <script type="text/javascript">
 
-var d=new Date()
-var day=d.getDate()
-var month=d.getMonth() + 1
-var year=d.getFullYear()
+var d=new Date();
+var day=d.getDate();
+var month=d.getMonth() + 1;
+var year=d.getFullYear();
 
 document.getElementById("today_date").value = month + "/" + day + "/" + year;
-document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
+
+
+	//  var dtest=new Date();
+	//dtest.setDate(dtest.getDate() + 10);
+	//firebase.database().ref().child('user2').update({
+    //"datetest" : dtest,
+	//});
+
 
 		$(document).on("tap","#library",function(){
 		$("#addtolist").on("tap",function(){
@@ -1498,13 +1561,41 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 	var userlist = userid + "list";
 	firebase.database().ref(userid).child($("#item_input").val()).once('value',function(snapshot) {
 	group_name= snapshot.val().group;
+	periodlength=snapshot.val().period;
+	var expirationd=new Date();
+	var datestring=document.getElementById("today_date").value;
+	
+	
+	if (datestring.length==9) {
+	var setM=datestring.substring(0,1);
+	var setD=datestring.substring(2,4);
+	var setY=datestring.substring(5);
+	expirationd.setDate(setD);
+	expirationd.setMonth(setM);	
+	expirationd.setYear(setY);	
+	};
+		if (datestring.length==10) {
+	var setM=datestring.substring(0,2);
+	var setD=datestring.substring(3,5);
+	var setY=datestring.substring(6);
+	expirationd.setDate(setD);
+	expirationd.setMonth(setM);	
+	expirationd.setYear(setY);	
+	};
+	
+	expirationd.setDate(expirationd.getDate()+ periodlength);
+	var eday=expirationd.getDate();
+	var emonth=expirationd.getMonth();
+	var eyear=expirationd.getFullYear();
+	expirations= emonth + "/" + eday + "/" + eyear;
 	console.log(group_name);
 		    firebase.database().ref(userlist).child($("#item_input").val()).update({
 
 
       "group" : group_name,
       "quantity" : purchaseQuantity,
-	  "purchase" : purchaseDate
+	  "purchase" : purchaseDate,
+	  "expiration" :expirations
 	});
 		window.location.reload();
 	});
@@ -1617,6 +1708,7 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
 			</div>
 		  </div>
 </div> 
+<<<<<<< HEAD
 =======
 
         <!--Grace-->
@@ -2310,5 +2402,9 @@ document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
             </div>
         </div> 
 >>>>>>> ken519
+=======
+
+
+>>>>>>> Vic522
     </body>
 </html>
