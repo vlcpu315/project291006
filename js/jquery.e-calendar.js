@@ -258,17 +258,7 @@
     };
 	
 	
-   
-    
-    /**var test=[
-            {title: 'Beef' , description: '', datetime: new Date(2017, new Date().getMonth(), 12)},
-            {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
-            {title: 'Beef', description: 'beef2', datetime: new Date(2017, new Date().getMonth(), 31)},
-			 {title: 'Test', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
-			  {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)},
-			   {title: 'Apple', description: '', datetime: new Date(2017, new Date().getMonth(), 23)}
-        ];**/
-	
+
     // plugin defaults
 	
         

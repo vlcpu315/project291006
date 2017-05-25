@@ -2,17 +2,9 @@
 <html>
     <head>
         <title>main page</title>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:url" content="http://e-fridge-web.tk/" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="E-Fridge"/>
-        <meta property="og:description" content="A Smart Food Saver"/>
-        <meta property="og:image" content="image/logo.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
-
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.theme.css" />
 		<link rel="stylesheet" href="css/jquery.e-calendar.css"/>
@@ -23,7 +15,7 @@
         <script src="js/jquery.mobile.subpage.js"></script>
 		<script src="js/jquery.ui.datepicker.js"></script>
 		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
-
+		 <script src="js/jquery.e-calendar.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="js/login.js"></script>
@@ -128,86 +120,6 @@ console.log(eventlist);
 <script type="text/javascript" src="js/jquery.e-calendar.js"></script>
 
 
-=======
-        <link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
-        <link rel="stylesheet" href="css/jquery.mobile.datepicker.theme.css" />
-        <script src="js/jquery.mobile-1.4.5/jquery-1.12.4.js"></script>
-        <script src="js/datepicker.js"></script>
-        <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="js/jqm-spinbox.min.js"></script>
-        <script src="js/jquery.mobile.subpage.js"></script>
-        <link rel="stylesheet" href="css/jquery.mobile.datepicker.css">
-        <script src="js/jquery.ui.datepicker.js"></script>
-        <script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-        <script src="js/password.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyBq_NsQ3l5KdJ-vs7dK5glVM1HQc0NKS6A",
-                authDomain: "webapp-afa8f.firebaseapp.com",
-                databaseURL: "https://webapp-afa8f.firebaseio.com",
-                projectId: "webapp-afa8f",
-                storageBucket: "webapp-afa8f.appspot.com",
-                messagingSenderId: "189007667783"
-            };
-            firebase.initializeApp(config);
-
-            // 1 read data from database
-            //firebase.database().ref('/lib/Beef/').once('value',function(snapshot) {
-            //console.log(snapshot.key);
-            //});
-
-
-            // 2 copy datab from lib to user2
-            //         firebase.database().ref('lib').once('value', function(snapshot) {
-            //          firebase.database().ref().child('user2').set(snapshot.val());
-            //        });
-
-            // 3 write new data into user2
-            //firebase.database().ref().child('user2').update({
-            //    "Egg" : {
-            //  "group" : "other",
-            //  "period" : 30
-            //}
-            //});
-
-            //let i=0;
-            //var myArray=new Array()
-            //var ref = firebase.database().ref('user2');
-            //ref.orderByChild("group").equalTo('meat').once("value", function(snapshot) {
-            //var packJson = snapshot.val();
-            //for (var p in packJson) {
-            //ref.child(p).once('value', function(snapshot){
-            //myArray[i]=snapshot.key;
-            //console.log(myArray[i]);
-            //i++;
-            //})};
-            //});
-
-            //var nav=document.getElementById("meatul");	
-            //var newText=document.createTextNode('myArray[0]');
-            //var newLink=document.createElement('a')
-            //var newChild=document.createElement('li');
-            //newLink.appendChild(newText);  
-            //newLink.setAttribute('href',"#");  
-            //newChild.appendChild(newLink);  
-            //nav.appendChild(newChild);
-
-            //var query = firebase.database().ref('user2').orderByChild("group").equalTo("other").limitToFirst(10);
-            //console.log(query.val());
-
-            //firebase.database().ref("user2").orderByChild("group").equalTo("meat").on('value', function(snapshot) {
-            //  alert(snapshot.key)
-            //  });
-
-
-
-
-
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-        <script src="js/login.js"></script>
         <style>
             div #content.ui-content{ background: none }      
             .ui-page { 
@@ -261,33 +173,33 @@ console.log(eventlist);
                 top: 15% !important;
             }
         </style>
-        <script>
-            $(function(){
-                $( ".date-input-css" ).datepicker();
-            })
-        </script>
-        <script>
-            $( function() {
-                $( "#datepicker" ).datepicker();
-            } );
-        </script>
+		<script>
+		   $(function(){
+		   $( ".date-input-css" ).datepicker();
+		  })
+		 </script>
+		 <script>
+		  $( function() {
+			$( "#datepicker" ).datepicker();
+		  } );
+		  </script>
     </head>
     <body>
-        <!--Ken-->
+		<!--Ken-->
         <div data-role="page" id="NewUser">
             <div data-role="header">
                 <a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
                 <h1>Home</h1>
                 <a href="#popupMenu00" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                <div data-role="popup" id="popupMenu00">
-                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a onclick="return SignOut()">Log Out</a></li>
-                        <li><a onclick="return changePW()">Change Password</a></li>
-                        <li><a href="#settings">Settings</a></li>
-                        <li><a href="#affiliated">Affiliated App</a></li>
-                        <li><a href="#contactUs">Contact Us</a></li>
-                    </ul>
-                </div>
+					<div data-role="popup" id="popupMenu00">
+						<ul data-role="listview" data-inset="true" style="min-width:210px;">
+							<li><a onclick="return SignOut()">Log Out</a></li>
+							<li><a href="#confirmPW">Change Password</a></li>
+							<li><a href="#settings">Settings</a></li>
+							<li><a href="#affiliated">Affiliated App</a></li>
+							<li><a href="#contactUs">Contact Us</a></li>
+						</ul>
+					</div>
             </div>
             <div data-role="content" id="content">
 
@@ -307,18 +219,18 @@ console.log(eventlist);
         </div>
         <div data-role="page" id="listpage">
             <div data-role="header" data-theme="a">
-                <a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
+				<a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
                 <h1>Home</h1>
                 <a href="#popupMenu0" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                <div data-role="popup" id="popupMenu0">
-                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a onclick="return SignOut()">Log Out</a></li>
-                        <li><a onclick="return changePW()">Change Password</a></li>
-                        <li><a href="#settings">Settings</a></li>
-                        <li><a href="#affiliated">Affiliated App</a></li>
-                        <li><a href="#contactUs">Contact Us</a></li>
-                    </ul>
-                </div>
+					<div data-role="popup" id="popupMenu0">
+						<ul data-role="listview" data-inset="true" style="min-width:210px;">
+							<li><a onclick="return SignOut()">Log Out</a></li>
+							<li><a href="#confirmPW">Change Password</a></li>
+							<li><a href="#settings">Settings</a></li>
+							<li><a href="#affiliated">Affiliated App</a></li>
+							<li><a href="#contactUs">Contact Us</a></li>
+						</ul>
+					</div>
             </div>
 
             <div data-role="content" id="content" data-theme="a">
@@ -371,41 +283,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 	
 
 				</script>
-                        <script>
-
-
-                            let i=0;
-                            var navlist=document.getElementById("meatlistul");
-                            var myArray1ist=new Array();
-                            var ref = firebase.database().ref('user2list');
-                            ref.orderByChild("group").equalTo('meat').once("value", function(snapshot) {
-                                var packJsonlist = snapshot.val();
-
-                                for (var p in packJsonlist) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray1ist[i]=snapshot.key;
-                                        var newTextlist=document.createTextNode(myArray1ist[i]);
-                                        var newLinklist=document.createElement('a');
-                                        var newChildlist=document.createElement('li');
-                                        newLinklist.appendChild(newTextlist);  
-                                        newLinklist.setAttribute('href',"#InfomationPage");
-                                        newLinklist.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChildlist.appendChild(newLinklist);
-                                        newChildlist.setAttribute('class', "ui-first-child ui-last-child");
-                                        navlist.appendChild(newChildlist);
-                                        document.getElementById('spanmeat').innerHTML=i;
-                                        i++;
-                                    })};
-                                //document.getElementById("spanmeat").value=i;
-                            });
-
-
-                        </script>
                     </div>
                     <div data-role="collapsible" >
                         <h4>Vegetable<span class="ui-li-count" id="spanvegetable">0</span></h4>
                         <ul data-role="listview" id="vegetablelistul">
-
+ 
                         </ul>
 										<script>
 
@@ -440,35 +322,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 				</script>						
 						
-                        <script>
-
-
-                            i=0;
-                            var navlist2=document.getElementById("vegetablelistul");
-                            var myArray1ist2=new Array();
-                            var ref = firebase.database().ref('user2list');
-                            ref.orderByChild("group").equalTo('Vegetable').once("value", function(snapshot) {
-                                var packJsonlist2 = snapshot.val();
-                                for (var p in packJsonlist2) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray1ist2[i]=snapshot.key;
-                                        var newTextlist2=document.createTextNode(myArray1ist2[i]);
-                                        var newLinklist2=document.createElement('a');
-                                        var newChildlist2=document.createElement('li');
-                                        newLinklist2.appendChild(newTextlist2);  
-                                        newLinklist2.setAttribute('href',"#InfomationPage");
-                                        newLinklist2.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChildlist2.appendChild(newLinklist2);
-                                        newChildlist2.setAttribute('class', "ui-first-child ui-last-child");
-                                        navlist2.appendChild(newChildlist2);
-                                        document.getElementById('spanvegetable').innerHTML=i;
-                                        i++;
-                                    })};
-                            });
-
-
-                        </script>						
-
                     </div>
                     <div data-role="collapsible" >
                         <h4>Seafood<span class="ui-li-count" id="spanseafood">0</span></h4>
@@ -507,34 +360,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	});		
 
 				</script>	
-                        <script>
-
-
-                            i=0;
-                            var navlist3=document.getElementById("seafoodlistul");
-                            var myArray1ist3=new Array();
-                            var ref = firebase.database().ref('user2list');
-                            ref.orderByChild("group").equalTo('Seafood').once("value", function(snapshot) {
-                                var packJsonlist3 = snapshot.val();
-                                for (var p in packJsonlist3) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray1ist3[i]=snapshot.key;
-                                        var newTextlist3=document.createTextNode(myArray1ist3[i]);
-                                        var newLinklist3=document.createElement('a');
-                                        var newChildlist3=document.createElement('li');
-                                        newLinklist3.appendChild(newTextlist3);  
-                                        newLinklist3.setAttribute('href',"#InfomationPage");
-                                        newLinklist3.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChildlist3.appendChild(newLinklist3);
-                                        newChildlist3.setAttribute('class', "ui-first-child ui-last-child");
-                                        navlist3.appendChild(newChildlist3);
-                                        document.getElementById('spanseafood').innerHTML=i;
-                                        i++;
-                                    })};
-                            });
-
-
-                        </script>	
                     </div>
                     <div data-role="collapsible" >
                         <h4>Fruit<span class="ui-li-count" id="spanfruit">0</span></h4>
@@ -574,34 +399,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	});
 
 				</script>	
-                        <script>
-
-
-                            i=0;
-                            var navlist4=document.getElementById("fruitlistul");
-                            var myArray1ist4=new Array();
-                            var ref = firebase.database().ref('user2list');
-                            ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
-                                var packJsonlist4 = snapshot.val();
-                                for (var p in packJsonlist4) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray1ist4[i]=snapshot.key;
-                                        var newTextlist4=document.createTextNode(myArray1ist4[i]);
-                                        var newLinklist4=document.createElement('a');
-                                        var newChildlist4=document.createElement('li');
-                                        newLinklist4.appendChild(newTextlist4);  
-                                        newLinklist4.setAttribute('href',"#InfomationPage");
-                                        newLinklist4.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChildlist4.appendChild(newLinklist4);
-                                        newChildlist4.setAttribute('class', "ui-first-child ui-last-child");
-                                        navlist4.appendChild(newChildlist4);
-                                        document.getElementById('spanfruit').innerHTML=i;
-                                        i++;
-                                    })};
-                            });
-
-
-                        </script>	
                     </div>
                     <div data-role="collapsible" >
                         <h4>Dairy<span class="ui-li-count" id="spandairy">0</span></h4>
@@ -640,34 +437,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	});	
 
 				</script>	
-                        <script>
-
-
-                            i=0;
-                            var navlist5=document.getElementById("dairylistul");
-                            var myArray1ist5=new Array();
-                            var ref = firebase.database().ref('user2list');
-                            ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
-                                var packJsonlist5 = snapshot.val();
-                                for (var p in packJsonlist5) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray1ist5[i]=snapshot.key;
-                                        var newTextlist5=document.createTextNode(myArray1ist5[i]);
-                                        var newLinklist5=document.createElement('a');
-                                        var newChildlist5=document.createElement('li');
-                                        newLinklist5.appendChild(newTextlist5);  
-                                        newLinklist5.setAttribute('href',"#InfomationPage");
-                                        newLinklist5.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChildlist5.appendChild(newLinklist5);
-                                        newChildlist5.setAttribute('class', "ui-first-child ui-last-child");
-                                        navlist5.appendChild(newChildlist5);
-                                        document.getElementById('spandairy').innerHTML=i;
-                                        i++;
-                                    })};
-                            });
-
-
-                        </script>	
                     </div>
                     <div data-role="collapsible" >
                         <h4>Others<span class="ui-li-count" id="spanothers">0</span></h4>
@@ -726,12 +495,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var uid = user.uid;
 	var userlist = uid + "list";		
 		firebase.database().ref(userlist).child(iteminfo_name).once('value',function(snapshot) {
-		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
-		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
-		document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
-		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
-		document.getElementById("datepurchase").value=snapshot.val().purchase;
-		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
 		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
 		document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
 		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
@@ -747,34 +510,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 	</script>
-                        <script>
-
-
-                            i=0;
-                            var navlist6=document.getElementById("otherslistul");
-                            var myArray1ist4=new Array();
-                            var ref = firebase.database().ref('user2list');
-                            ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
-                                var packJsonlist6 = snapshot.val();
-                                for (var p in packJsonlist6) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray1ist6[i]=snapshot.key;
-                                        var newTextlist6=document.createTextNode(myArray1ist6[i]);
-                                        var newLinklist6=document.createElement('a');
-                                        var newChildlist6=document.createElement('li');
-                                        newLinklist6.appendChild(newTextlist6);  
-                                        newLinklist6.setAttribute('href',"#InfomationPage");
-                                        newLinklist6.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChildlist6.appendChild(newLinklist6);
-                                        newChildlist6.setAttribute('class', "ui-first-child ui-last-child");
-                                        navlist6.appendChild(newChildlist6);
-                                        document.getElementById('spanothers').innerHTML=i;
-                                        i++;
-                                    })};
-                            });
-
-
-                        </script>	
                     </div>
                 </div>
                 <a href="#library" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext" style="font-size:24px">Plus Icon</a>
@@ -785,7 +520,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     <ul>
                         <li><a href="#listpage" data-icon="home">List</a></li>
                         <li><a href="#library" data-icon="info">Lib</a></li>
-                        <!--changed href="calendar.html" rel="external"-->
+						<!--changed href="calendar.html" rel="external"-->
                         <li><a href="#pagecal" data-icon="grid">Cal</a></li>
                     </ul>
                 </div>
@@ -1684,695 +1419,6 @@ document.getElementById("today_date").value = month + "/" + day + "/" + year;
 		  </div>
 </div> 
 
-        <!--Grace-->
-        <div data-role="page" id="confirmPW">
-            <div data-role="header">
-                <a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
-                <h1>Confirm Password</h1>
-                <a href="#popupMenu" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                <div data-role="popup" id="popupMenu">
-                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
-                        <li><a onclick="return changePW()">Change Password</a></li>
-                        <li><a href="#settings">Settings</a></li>
-                        <li><a href="#affiliated">Affiliated App</a></li>
-                        <li><a href="#contactUs">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div data-role="content" id="content">
-                <div class="confirmPW">
-                    <br/>
-                    <h2>Please type your current password</h2>
-                    <br/>
-                    <form method="post" action="">
-                        <div data-role="fieldcontain">
-                            <label for="password"></label>
-                            <input type="password" name="currentPW" id="currentPW" placeholder="password">
-                        </div>
-                    </form>
-
-                    <form>
-                        <input type="submit" value="Confirm" data-inline="true">
-                    </form>
-                </div>
-            </div>
-            <div data-role="footer" id="footer">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#listpage" data-icon="home">List</a></li>
-                        <li><a href="#library" data-icon="info">Lib</a></li>
-                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="page" id="newPW">
-            <div data-role="header">
-                <a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
-                <h1>New Password</h1>
-                <a href="#popupMenu2" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                <div data-role="popup" id="popupMenu2">
-                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
-                        <li><a onclick="return changePW()" rel="external">Change Password</a></li>
-                        <li><a href="#settings" rel="external">Settings</a></li>
-                        <li><a href="#affiliated" rel="external">Affiliated App</a></li>
-                        <li><a href="#contactUs" rel="external">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div data-role="content" id="content">
-                <div class="newPW">
-                    <br/>
-                    <h2>Enter your new password</h2>
-                    <form method="post" action="">
-                        <div data-role="fieldcontain">
-                            <label for="newPW">New Password</label>
-                            <input type="password" name="newPW" id="newPW" placeholder="new password">
-                            <br>
-                            <label for="confirmNewPW">Confirm New Password</label>
-                            <input type="password" name="confirmNewPW" id="confirmNewPW" placeholder="confirm new password">
-                        </div>
-                    </form>
-
-                    <form>
-                        <input type="submit" onclick="changePW()" value="Confirm" data-inline="true">
-                    </form>
-                </div>
-            </div>
-            <div data-role="footer" id="footer">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#listpage" data-icon="home">List</a></li>
-                        <li><a href="#library" data-icon="info">Lib</a></li>
-                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="page" id="settings">
-            <div data-role="header">
-                <a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
-                <h1>Settings</h1>
-                <a href="#popupMenu3" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                <div data-role="popup" id="popupMenu3">
-                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
-                        <li><a onclick="return changePW()" rel="external">Change Password</a></li>
-                        <li><a href="#settings" rel="external">Settings</a></li>
-                        <li><a href="#affiliated" rel="external">Affiliated App</a></li>
-                        <li><a href="#contactUs" rel="external">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div data-role="content">
-                <div class="settings">
-                    <label for="spin">Warning before 
-                        <input type="text" data-role="spinbox" name="spinsetting" id="spinsetting" value="60" min="0" max="100" />
-                        days</label>
-                </div>
-                <form method="post" action="demoform.asp">
-                    <div data-role="fieldcontain">
-                        <label for="switch">Email</label>
-                        <select name="emailswitch" id="emailswitch" data-role="slider">
-                            <option value="on">On</option>
-                            <option value="off">Off</option>
-                        </select>
-                    </div>
-                </form>
-                <form method="post" action="demoform.asp">
-                    <div data-role="fieldcontain">
-                        <label for="switch">Tips</label>
-                        <select name="tipsswitch" id="tipsswitch" data-role="slider">
-                            <option value="on">On</option>
-                            <option value="off">Off</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-
-            <div data-role="footer" id="footer">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#listpage" data-icon="home">List</a></li>
-                        <li><a href="#library" data-icon="info">Lib</a></li>
-                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="page" id="contactUs">
-            <div data-role="header">
-                <a href="#NewUser" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-icon="home" data-iconpos="notext"></a>
-                <h1>Contact Us</h1>
-                <a href="#popupMenu4" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                <div data-role="popup" id="popupMenu4">
-                    <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
-                        <li><a onclick="return changePW()" rel="external">Change Password</a></li>
-                        <li><a href="#settings" rel="external">Settings</a></li>
-                        <li><a href="#affiliated" rel="external">Affiliated App</a></li>
-                        <li><a href="#contactUs" rel="external">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div data-role="content">
-                <div id="logo" align="center">
-                    <img src="image/Logo E.png" alt="">
-                </div>
-
-                <h2>Contact information</h2>
-                <p>
-                    Victor Chen: vlcpulane2@Hotmail.com<br>
-                    Ken Wu: yanhwan@gmail.com<br>
-                    Samuel: hillpig@gmail.com<br>
-                    Grace: gracechengyijia@gmail.com<br>
-                    Bob: winnerbob87@gmail.com<br>  
-                    <script>
-                        window.fbAsyncInit = function() {
-                            FB.init({
-                                appId      : '1523645524344170',
-                                xfbml      : true,
-                                version    : 'v2.9'
-                            });
-                            FB.AppEvents.logPageView();
-                        };
-
-                        (function(d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id)) return;
-                            js = d.createElement(s); js.id = id;
-                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1523645524344170";
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));
-                        document.getElementById('shareBtn').onclick = function() {
-                            FB.ui({
-                                method: 'share',
-                                mobile_iframe: true,
-                                href: 'http://e-fridge-web.tk/',
-                            }, function(response){});
-                        };
-                    </script>
-                    <div style='position:fixed;bottom:11%'>
-                <div class="fb-share-button" 
-                     data-href="http://e-fridge-web.tk" 
-                     data-layout="button" data-size="large"></div>
-                </div>
-                    </p>
-            </div>
-
-            <div data-role="footer" id="footer">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#listpage" data-icon="home">List</a></li>
-                        <li><a href="#library" data-icon="info">Lib</a></li>
-                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div data-role="page" id="affiliated">
-            <div data-role="header" data-position="fixed" style="opacity: initial;">
-                <a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
-                <h1>Affiliated App</h1>
-                <div class="ui-btn-right">
-                    <a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                    <div data-role="popup" id="popupMenu6">
-                        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                            <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
-                            <li><a onclick="return changePW()">Change Password</a></li>
-                            <li><a href="#affiliated">Affiliated App</a></li>
-                            <li><a href="#settings">Settings</a></li>
-                            <li><a href="#contactUs">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div data-role="main" class="ui-content">
-                <div id="logo1" align="center">
-                    <img src="image/logo2.jpg" alt="" style="max-width: 50%;">
-                    <p>Food Smart can keep the grocey item on track(days left to expire), we have tracking list and provide report for period of time.</p>
-                </div>
-
-                <div id="logo2" align="center">
-                    <img src="image/logo6.png" alt="" style="max-width: 60%;">
-                    <p>Freshness provides the food preservation methods for you to keep the food fresh as long as you can.</p>
-                </div>
-
-                <div id="logo3" align="center">
-                    <img src="image/logo7.png" alt="" style="max-width: 60%;">
-                    <p>Pocket Pantry will help you plan meals, create grocery lists and reduce waste.</p>
-                </div>
-
-            </div>
-
-            <div data-role="footer" data-position="fixed" id="footer" style="position: fixed; opacity: initial;">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#listpage" data-icon="home">List</a></li>
-                        <li><a href="#library" data-icon="info">Lib</a></li>
-                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
-
-        <!--Samuel-->
-        <div data-role="page" id="library">
-            <div data-role="header" data-position="fixed" style="opacity: initial;">
-                <a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
-                <h1>Food Library</h1>
-                <div class="ui-btn-right">
-                    <a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                    <div data-role="popup" id="popupMenu5">
-                        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                            <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
-                            <li><a onclick="return changePW()">Change Password</a></li>
-                            <li><a href="#settings">Settings</a></li>
-                            <li><a href="#affiliated">Affiliated App</a></li>
-                            <li><a href="#contactUs">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div data-role="main" class="ui-content">
-                <div data-role="collapsible-set">
-                    <div data-role="collapsible">
-                        <h4>Meat</h4>
-
-
-                        <ul id="meatul" data-role="listview" name="food_list">
-                            <li data-icon="plus" id="meatadd"><a href="#">+</a></li>
-
-                        </ul>
-                        <script>
-
-
-                            i=0;
-                            var nav=document.getElementById("meatul");
-                            var plus=document.getElementById("meatadd");
-                            let myArray=new Array();
-                            var ref = firebase.database().ref('user2');
-                            ref.orderByChild("group").equalTo('meat').once("value", function(snapshot) {
-                                var packJson = snapshot.val();
-                                for (var p in packJson) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray[i]=snapshot.key;
-                                        var newText=document.createTextNode(myArray[i]);
-                                        var newLink=document.createElement('a');
-                                        var newChild=document.createElement('li');
-                                        newLink.appendChild(newText);  
-                                        newLink.setAttribute('href',"#add");
-                                        newLink.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChild.appendChild(newLink);
-                                        newChild.setAttribute('class', "ui-first-child ui-last-child");
-                                        nav.appendChild(newChild);
-                                        nav.insertBefore(newChild,plus);
-                                        i++;
-                                    })};
-                            });
-
-
-
-                            //var newText2=document.createTextNode("+");
-                            //var newLink2=document.createElement('a');
-                            //var newChild2=document.createElement('li');
-                            //newLink2.appendChild(newText2);  
-                            //newLink2.setAttribute('href',"#");  
-                            //newChild2.appendChild(newLink2);  
-                            //nav.appendChild(newChild2);
-
-
-
-
-
-                        </script>
-                    </div>
-                    <div data-role="collapsible">
-                        <h4>Vegetable</h4>
-                        <ul id="vegetableul" data-role="listview" name="food_list">
-
-                            <li data-icon="plus" id="vegetableadd"><a href="#">+</a></li>
-                        </ul>
-                        <script>
-
-
-                            i=0;
-                            var nav2=document.getElementById("vegetableul");
-                            var plus2=document.getElementById("vegetableadd");
-                            let myArray2=new Array();
-                            var ref = firebase.database().ref('user2');
-                            ref.orderByChild("group").equalTo('Vegetable').once("value", function(snapshot) {
-                                var packJson2 = snapshot.val();
-                                for (var p in packJson2) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray2[i]=snapshot.key;
-                                        var newText2=document.createTextNode(myArray2[i]);
-                                        var newLink2=document.createElement('a');
-                                        var newChild2=document.createElement('li');
-                                        newLink2.appendChild(newText2);  
-                                        newLink2.setAttribute('href',"#add");
-                                        newLink2.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChild2.appendChild(newLink2);
-                                        newChild2.setAttribute('class', "ui-first-child ui-last-child");
-                                        nav2.appendChild(newChild2);
-                                        nav2.insertBefore(newChild2,plus2);
-                                        i++;
-                                    })};
-                            });
-
-
-                        </script>
-                    </div>
-                    <div data-role="collapsible">
-                        <h4>Seafood</h4>
-                        
-                                   <ul id="seafoodul" data-role="listview" name="food_list">
-
-                        <li data-icon="plus" id="seafoodadd"><a href="#">+</a></li>
-                        <ul data-role="listview" name="food_list">
-                            <li><a href="#">Salmon</a></li>
-                            <li><a href="#">Tuna</a></li>
-                            <li><a href="#">Lobster</a></li>
-                            <li><a href="#">Crabs</a></li>
-                            <li><a href="#">Shrimps</a></li>
-                            <li><a href="#">Cod</a></li>
-                            <li><a href="#">Flounder</a></li>
-                            <li><a href="#">Catfish</a></li>
-                            <li><a href="#">Scallop</a></li>
-                            <li><a href="#">Sea Bass</a></li>
-                            <li data-icon="plus"><a href="#">+</a></li>
-                        </ul>
-                        <script>
-
-                            i=0;
-                            var nav3=document.getElementById("seafoodul");
-                            var plus3=document.getElementById("seafoodadd");
-                            let myArray3=new Array();
-                            var ref = firebase.database().ref('user2');
-                            ref.orderByChild("group").equalTo('Seafood').once("value", function(snapshot) {
-                                var packJson3 = snapshot.val();
-                                for (var p in packJson3) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray3[i]=snapshot.key;
-                                        var newText3=document.createTextNode(myArray3[i]);
-                                        var newLink3=document.createElement('a');
-                                        var newChild3=document.createElement('li');
-                                        newLink3.appendChild(newText3);  
-                                        newLink3.setAttribute('href',"#add");
-                                        newLink3.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChild3.appendChild(newLink3);
-                                        newChild3.setAttribute('class', "ui-first-child ui-last-child");
-                                        nav3.appendChild(newChild3);
-                                        nav3.insertBefore(newChild3,plus3);
-                                        i++;
-                                    })};
-                            });
-
-                        </script>
-                    </div>
-                    <div data-role="collapsible">
-                        <h4>Fruit</h4>
-                        <ul id="fruitul" data-role="listview" name="food_list">
-
-                            <li data-icon="plus" id="fruitadd"><a href="#">+</a></li>
-                        </ul>
-                        <script>
-
-                            i=0;
-                            var nav4=document.getElementById("fruitul");
-                            var plus4=document.getElementById("fruitadd");
-                            let myArray4=new Array();
-                            var ref = firebase.database().ref('user2');
-                            ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
-                                var packJson4 = snapshot.val();
-                                for (var p in packJson4) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray4[i]=snapshot.key;
-                                        var newText4=document.createTextNode(myArray4[i]);
-                                        var newLink4=document.createElement('a');
-                                        var newChild4=document.createElement('li');
-                                        newLink4.appendChild(newText4);  
-                                        newLink4.setAttribute('href',"#add");
-                                        newLink4.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChild4.appendChild(newLink4);
-                                        newChild4.setAttribute('class', "ui-first-child ui-last-child");
-                                        nav4.appendChild(newChild4);
-                                        nav4.insertBefore(newChild4,plus4);
-                                        i++;
-                                    })};
-                            });
-
-                        </script>
-                    </div>
-                    <div data-role="collapsible">
-                        <h4>Dairy</h4>
-                        <ul id="dairyul" data-role="listview" name="food_list">
-
-                            <li data-icon="plus" id="dairyadd"><a href="#">+</a></li>
-                        </ul>
-                        <script>
-
-                            i=0;
-                            var nav5=document.getElementById("dairyul");
-                            var plus5=document.getElementById("dairyadd");
-                            let myArray5=new Array();
-                            var ref = firebase.database().ref('user2');
-                            ref.orderByChild("group").equalTo('Dairy').once("value", function(snapshot) {
-                                var packJson5 = snapshot.val();
-                                for (var p in packJson5) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray5[i]=snapshot.key;
-                                        var newText5=document.createTextNode(myArray5[i]);
-                                        var newLink5=document.createElement('a');
-                                        var newChild5=document.createElement('li');
-                                        newLink5.appendChild(newText5);  
-                                        newLink5.setAttribute('href',"#add");
-                                        newLink5.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChild5.appendChild(newLink5);
-                                        newChild5.setAttribute('class', "ui-first-child ui-last-child");
-                                        nav5.appendChild(newChild5);
-                                        nav5.insertBefore(newChild5,plus5);
-                                        i++;
-                                    })};
-                            });
-
-                        </script>
-                    </div>
-                    <div data-role="collapsible">
-                        <h4>Others</h4>
-                        <ul id="othersul" data-role="listview" name="food_list">
-
-                            <li data-icon="plus" id="othersadd"><a href="#">+</a></li>
-                        </ul>
-                        <script>
-
-                            i=0;
-                            var nav6=document.getElementById("othersul");
-                            var plus6=document.getElementById("othersadd");
-                            let myArray6=new Array();
-                            var ref = firebase.database().ref('user2');
-                            ref.orderByChild("group").equalTo('others').once("value", function(snapshot) {
-                                var packJson6 = snapshot.val();
-                                for (var p in packJson6) {
-                                    ref.child(p).once('value', function(snapshot){
-                                        myArray6[i]=snapshot.key;
-                                        var newText6=document.createTextNode(myArray6[i]);
-                                        var newLink6=document.createElement('a');
-                                        var newChild6=document.createElement('li');
-                                        newLink6.appendChild(newText6);  
-                                        newLink6.setAttribute('href',"#add");
-                                        newLink6.setAttribute('class',"ui-btn ui-btn-icon-right ui-icon-carat-r");
-                                        newChild6.appendChild(newLink6);
-                                        newChild6.setAttribute('class', "ui-first-child ui-last-child");
-                                        nav6.appendChild(newChild6);
-                                        nav6.insertBefore(newChild6,plus6);
-                                        i++;
-                                    })};
-                            });
-
-                        </script>
-                    </div>
-                </div>
-                <script>
-                    var arr1 = document.getElementsByName("food_list");
-                    for (j = 0; j < arr1.length; j++) {
-                        var arr2 = arr1[j].getElementsByTagName("a");
-                        for (i = 0; i < arr2.length - 1; i++) {
-                            arr2[i].href = "#add";
-                            arr2[i].class="ui-btn ui-btn-icon-right ui-icon-plus ui-btn-icon-notext"}
-                        arr2[i].href = "#new_item";}
-
-                    $(document).on("tap","#library",function(){
-                        $("li").on("taphold",function(){
-                            $(this).remove();
-                        });                       
-                    });
-
-                    $(document).on("tap","#library",function(){
-                        $("li").on("tap",function(){
-                            item_name = $(this).text();
-                            document.getElementById("item_input").value = item_name;
-                        }); 
-                    });
-
-                </script>
-            </div>
-
-            <div data-role="footer" data-position="fixed" id="footer" style="position: fixed; opacity: initial;">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#listpage" data-icon="home">List</a></li>
-                        <li><a href="#library" data-icon="info">Lib</a></li>
-                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
-
-        <div data-role="page" id="add">
-            <div data-role="header">
-                <a href="#library" class="ui-btn ui-icon-back ui-btn-icon-notext">Back Button</a>
-                <h1>Add Item</h1>
-            </div>
-            <div data-role="content" id="content">
-
-                <div class="ui-block-a" style="float: none; width: 60%; margin: auto;">
-                    <form method="post" action="/action_page_post.php">
-                        <label for="item">Item:</label>
-                        <input type="text" name="item" id="item_input">
-                        <br>
-                        <label for="Quantity">Quantity:</label>
-                        <input type="text" data-role="spinbox" name="spin" id="spin" value="1" min="1" max="100" />
-                        <br>
-                        <label for="Phurchase" style="display: inline-block;">Purchase date:</label>
-                        <a href="#" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-notext" style="display: inline-block;float: right;position: relative;top: -15px;right: 7px;">Calendar Icon</a>
-                        <input type="text" class="date-input-css" id="today_date" style="display: inline-block;">
-
-                        <br>
-                        <label for="Expired" style="display: inline-block;">Expired date:</label>
-                        <a href="#" class="ui-btn ui-corner-all ui-icon-calendar ui-btn-icon-notext" style="display: inline-block;float: right;position: relative;top: -15px;right: 7px;">Calendar Icon</a>
-                        <input type="text" class="date-input-css" id="next_month" style="display: inline-block;">
-
-                        <br>
-                        <a href="#library" data-role="button" id="addtolist">add</a>
-                        <!--<input type="submit" value="Add" style="margin:0 auto;">-->
-                    </form>
-                </div>
-                <script type="text/javascript">
-
-                    var d=new Date()
-                    var day=d.getDate()
-                    var month=d.getMonth() + 1
-                    var year=d.getFullYear()
-
-                    document.getElementById("today_date").value = month + "/" + day + "/" + year;
-                    document.getElementById("next_month").value = month+1 + "/" + day + "/" + year;
-
-                    $(document).on("tap","#library",function(){
-                        $("#addtolist").on("tap",function(){
-                            var purchaseDate=document.getElementById("today_date").value;
-                            var purchaseQuantity=document.getElementById("spin").value;
-                            firebase.database().ref('user2list').child($("#item_input").val()).update({
-                                "group" : "meat",
-                                "quantity" : purchaseQuantity,
-                                "purchase" : purchaseDate
-                            });
-                            window.location.reload();
-                        });                       
-                    });
-
-
-
-                </script>
-
-
-            </div>
-        </div> 
-
-        <div data-role="page" id="new_item">
-            <div data-role="header">
-                <a href="#library" class="ui-btn ui-icon-back ui-btn-icon-notext">Back Button</a>
-                <h1>New Item</h1>
-            </div>
-            <div data-role="main" class="ui-content">
-                <div class="ui-block-a" style="float: none; width: 60%; margin: auto;">
-                    <div id="form">
-
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" id="name">
-                        <br>
-                        <label for="period">Period: (Days)</label>
-                        <input type="text" name="period" id="period">
-                        <br>
-                        <label for="info">Additional Information:</label>
-                        <textarea name="addinfo" id="info" style="height: 10em;"></textarea>
-                        <br>
-                        <a href="#library" data-role="button" id="addtolib">add</a>
-                    </div>
-                </div>
-                <script>
-
-
-                    // 3 write new data into user2
-                    $(document).on("tap","#library",function(){
-                        $("#addtolib").on("tap",function(){
-                            var itemname=document.getElementById("name").value;
-                            var itemperiod=document.getElementById("period").value;
-                            firebase.database().ref('user2').child($("#name").val()).update({
-                                "group" : "meat",
-                                "period" : itemperiod
-                            });
-                            window.location.reload();
-                        });                       
-                    });
-
-                </script>		
-            </div>
-        </div> 
-
-        <!--Vic-->
-        <div data-role="page" id="pagecal">
-            <div data-role="header">
-                <a href="#NewUser" data-iconpos="notext" data-icon="home"></a>
-                <h1>CALENDAR</h1>
-                <div class="ui-btn-right">
-                    <a href="#popupMenu7" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-                    <div data-role="popup" id="popupMenu7">
-                        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                            <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
-                            <li><a onclick="return changePW()">Change Password</a></li>
-                            <li><a href="#settings">Settings</a></li>
-                            <li><a href="#affiliated">Affiliated App</a></li>
-                            <li><a href="#contactUs">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div data-role="content">
-
-
-               <div id="calendar">
-			</div>
-            </div>
-            <div data-role="footer" id="footer">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#listpage" data-icon="home">List</a></li>
-                        <li><a href="#library" data-icon="info">Lib</a></li>
-                        <li><a href="#pagecal" data-icon="grid">Cal</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
 
     </body>
 </html>
