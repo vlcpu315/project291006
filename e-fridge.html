@@ -3,6 +3,11 @@
     <head>
         <title>main page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta property="og:url" content="http://e-fridge-web.tk/" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="E-Fridge"/>
+        <meta property="og:description" content="A Smart Food Saver"/>
+        <meta property="og:image" content="image/logo.png"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
 		<link rel="stylesheet" href="css/jquery.mobile.datepicker.css" />
@@ -17,11 +22,10 @@
 		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
 		 <script src="js/jquery.e-calendar.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
+        <!-- link to firebase  -->
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="js/login.js"></script>
-<!-- link to firebase  -->
-<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-		
+        <script src="js/password.js"></script>		
 <script>
   // Initialize Firebase
   var config = {
@@ -194,7 +198,7 @@ console.log(eventlist);
 					<div data-role="popup" id="popupMenu00">
 						<ul data-role="listview" data-inset="true" style="min-width:210px;">
 							<li><a onclick="return SignOut()">Log Out</a></li>
-							<li><a href="#confirmPW">Change Password</a></li>
+							<li><a onclick="return changePW()">Change Password</a></li>
 							<li><a href="#settings">Settings</a></li>
 							<li><a href="#affiliated">Affiliated App</a></li>
 							<li><a href="#contactUs">Contact Us</a></li>
@@ -225,7 +229,7 @@ console.log(eventlist);
 					<div data-role="popup" id="popupMenu0">
 						<ul data-role="listview" data-inset="true" style="min-width:210px;">
 							<li><a onclick="return SignOut()">Log Out</a></li>
-							<li><a href="#confirmPW">Change Password</a></li>
+							<li><a onclick="return changePW()">Change Password</a></li>
 							<li><a href="#settings">Settings</a></li>
 							<li><a href="#affiliated">Affiliated App</a></li>
 							<li><a href="#contactUs">Contact Us</a></li>
@@ -640,8 +644,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 		<a href="#popupMenu" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 		<div data-role="popup" id="popupMenu">
 			<ul data-role="listview" data-inset="true" style="min-width:210px;">
-				<li><a href="log.html" rel="external">Log Out</a></li>
-				<li><a href="#confirmPW">Change Password</a></li>
+				<li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+				<li><a onclick="return changePW()">Change Password</a></li>
 				<li><a href="#settings">Settings</a></li>
 				<li><a href="#affiliated">Affiliated App</a></li>
 				<li><a href="#contactUs">Contact Us</a></li>
@@ -684,8 +688,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 			<a href="#popupMenu2" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 			<div data-role="popup" id="popupMenu2">
 			<ul data-role="listview" data-inset="true" style="min-width:210px;">
-				<li><a href="log.html" rel="external">Log Out</a></li>
-				<li><a href="#confirmPW" rel="external">Change Password</a></li>
+				<li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+				<li><a onclick="return changePW()" rel="external">Change Password</a></li>
 				<li><a href="#settings" rel="external">Settings</a></li>
 				<li><a href="#affiliated" rel="external">Affiliated App</a></li>
 				<li><a href="#contactUs" rel="external">Contact Us</a></li>
@@ -729,8 +733,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 		<a href="#popupMenu3" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 		<div data-role="popup" id="popupMenu3">
 			<ul data-role="listview" data-inset="true" style="min-width:210px;">
-				<li><a href="log.html" rel="external">Log Out</a></li>
-				<li><a href="#confirmPW" rel="external">Change Password</a></li>
+				<li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+				<li><a onclick="return changePW()" rel="external">Change Password</a></li>
 				<li><a href="#settings" rel="external">Settings</a></li>
 				<li><a href="#affiliated" rel="external">Affiliated App</a></li>
 				<li><a href="#contactUs" rel="external">Contact Us</a></li>
@@ -781,8 +785,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 			<a href="#popupMenu4" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 			<div data-role="popup" id="popupMenu4">
 				<ul data-role="listview" data-inset="true" style="min-width:210px;">
-					<li><a href="log.html" rel="external">Log Out</a></li>
-					<li><a href="#confirmPW" rel="external">Change Password</a></li>
+					<li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+					<li><a onclick="return changePW()" rel="external">Change Password</a></li>
 					<li><a href="#settings" rel="external">Settings</a></li>
 					<li><a href="#affiliated" rel="external">Affiliated App</a></li>
 					<li><a href="#contactUs" rel="external">Contact Us</a></li>
@@ -801,6 +805,36 @@ firebase.auth().onAuthStateChanged(function(user) {
 			Samuel: hillpig@gmail.com<br>
 			Grace: gracechengyijia@gmail.com<br>
 			Bob: winnerbob87@gmail.com<br>
+                <script>
+                        window.fbAsyncInit = function() {
+                            FB.init({
+                                appId      : '1523645524344170',
+                                xfbml      : true,
+                                version    : 'v2.9'
+                            });
+                            FB.AppEvents.logPageView();
+                        };
+
+                        (function(d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1523645524344170";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                        document.getElementById('shareBtn').onclick = function() {
+                            FB.ui({
+                                method: 'share',
+                                mobile_iframe: true,
+                                href: 'http://e-fridge-web.tk/',
+                            }, function(response){});
+                        };
+                    </script>
+                    <div style='position:fixed;bottom:11%'>
+                <div class="fb-share-button" 
+                     data-href="http://e-fridge-web.tk" 
+                     data-layout="button" data-size="large"></div>
+                </div>
 			</p>
 		</div>
 
@@ -823,8 +857,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 		<a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 				<div data-role="popup" id="popupMenu6">
 					<ul data-role="listview" data-inset="true" style="min-width:210px;">
-						<li><a href="log.html" rel="external">Log Out</a></li>
-						<li><a href="#confirmPW">Change Password</a></li>
+						<li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+						<li><a onclick="return changePW()">Change Password</a></li>
 						<li><a href="#affiliated">Affiliated App</a></li>
 						<li><a href="#settings">Settings</a></li>
 						<li><a href="#contactUs">Contact Us</a></li>
@@ -871,8 +905,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 		<a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 				<div data-role="popup" id="popupMenu5">
 					<ul data-role="listview" data-inset="true" style="min-width:210px;">
-						<li><a href="log.html" rel="external">Log Out</a></li>
-						<li><a href="#confirmPW">Change Password</a></li>
+						<li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+						<li><a onclick="return changePW()">Change Password</a></li>
 						<li><a href="#settings">Settings</a></li>
 						<li><a href="#affiliated">Affiliated App</a></li>
 						<li><a href="#contactUs">Contact Us</a></li>
@@ -1393,8 +1427,8 @@ document.getElementById("today_date").value = month + "/" + day + "/" + year;
 			<a href="#popupMenu7" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
 				<div data-role="popup" id="popupMenu7">
 					<ul data-role="listview" data-inset="true" style="min-width:210px;">
-						<li><a href="log.html" rel="external">Log Out</a></li>
-						<li><a href="#confirmPW">Change Password</a></li>
+						<li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+						<li><a onclick="return changePW()">Change Password</a></li>
 						<li><a href="#settings">Settings</a></li>
 						<li><a href="#affiliated">Affiliated App</a></li>
 						<li><a href="#contactUs">Contact Us</a></li>

@@ -30,33 +30,8 @@ function SignUp(){
 
 };
 
-	
-//firebase.auth().onAuthStateChanged(function(user) {
-//	var signupuid=user.uid;
-//	firebase.database().ref('lib').once('value', function(snapshot) {
-//	firebase.database().ref().child(signupuid).set(snapshot.val());
-//	});
-//});
-	
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
-		
-	var uid=firebaseUser.uid;
-	firebase.database().ref('lib').once('value', function(snapshot) {
-	firebase.database().ref().child(uid).set(snapshot.val());
-	window.location="e-fridge.html";
-	});
- //   window.location="e-fridge.html";
+        window.location="e-fridge.html";
     }
 });
-
-//firebase.auth().onAuthStateChanged(firebaseUser => {
-//    if(firebaseUser){
-		
-//	var uid=firebaseUser.uid;
-//	firebase.database().ref('lib').once('value', function(snapshot) {
-//	firebase.database().ref().child(uid).set(snapshot.val());
-//	});
-//   window.location="e-fridge.html";
-//    }
-//});
