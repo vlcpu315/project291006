@@ -208,7 +208,6 @@ console.log(eventlist);
         </script>
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
         <script src="js/login.js"></script>
->>>>>>> ken519
         <style>
             div #content.ui-content{ background: none }      
             .ui-page { 
@@ -329,7 +328,6 @@ console.log(eventlist);
                         <ul data-role="listview" id="meatlistul">
 
                         </ul>
-<<<<<<< HEAD
 										<script>
 										
 firebase.auth().onAuthStateChanged(function(user) {
@@ -373,7 +371,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	
 
 				</script>
-=======
                         <script>
 
 
@@ -404,14 +401,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
                         </script>
->>>>>>> ken519
                     </div>
                     <div data-role="collapsible" >
                         <h4>Vegetable<span class="ui-li-count" id="spanvegetable">0</span></h4>
                         <ul data-role="listview" id="vegetablelistul">
 
                         </ul>
-<<<<<<< HEAD
 										<script>
 
 firebase.auth().onAuthStateChanged(function(user) {  
@@ -445,7 +440,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 				</script>						
 						
-=======
                         <script>
 
 
@@ -475,14 +469,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 
                         </script>						
 
->>>>>>> ken519
                     </div>
                     <div data-role="collapsible" >
                         <h4>Seafood<span class="ui-li-count" id="spanseafood">0</span></h4>
                         <ul data-role="listview" id="seafoodlistul">
 
                         </ul>
-<<<<<<< HEAD
 										<script>
 
 firebase.auth().onAuthStateChanged(function(user) {   
@@ -515,7 +507,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	});		
 
 				</script>	
-=======
                         <script>
 
 
@@ -544,14 +535,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
                         </script>	
->>>>>>> ken519
                     </div>
                     <div data-role="collapsible" >
                         <h4>Fruit<span class="ui-li-count" id="spanfruit">0</span></h4>
                         <ul data-role="listview" id="fruitlistul">
 
                         </ul>
-<<<<<<< HEAD
 										<script>
 
 firebase.auth().onAuthStateChanged(function(user) {   
@@ -585,7 +574,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	});
 
 				</script>	
-=======
                         <script>
 
 
@@ -614,14 +602,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
                         </script>	
->>>>>>> ken519
                     </div>
                     <div data-role="collapsible" >
                         <h4>Dairy<span class="ui-li-count" id="spandairy">0</span></h4>
                         <ul data-role="listview" id="dairylistul">
 
                         </ul>
-<<<<<<< HEAD
 										<script>
 
 firebase.auth().onAuthStateChanged(function(user) {   
@@ -654,7 +640,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 	});	
 
 				</script>	
-=======
                         <script>
 
 
@@ -683,13 +668,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
                         </script>	
->>>>>>> ken519
                     </div>
                     <div data-role="collapsible" >
                         <h4>Others<span class="ui-li-count" id="spanothers">0</span></h4>
                         <ul data-role="listview" id="otherslistul">
                         </ul>
-<<<<<<< HEAD
 										<script>
 
 firebase.auth().onAuthStateChanged(function(user) {    
@@ -743,14 +726,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var uid = user.uid;
 	var userlist = uid + "list";		
 		firebase.database().ref(userlist).child(iteminfo_name).once('value',function(snapshot) {
-<<<<<<< HEAD
 		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
 		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
 		document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
 		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
 		document.getElementById("datepurchase").value=snapshot.val().purchase;
 		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
-=======
 		//document.getElementById("groupinfo").innerHTML=snapshot.val().group;
 		document.getElementById("quantityinfomodify").value=snapshot.val().quantity;
 		document.getElementById("quantityinfo").innerHTML=snapshot.val().quantity;
@@ -758,7 +739,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 		document.getElementById("purchaseDateinfo").innerHTML=snapshot.val().purchase;
 		document.getElementById("expiredinfo").innerHTML=snapshot.val().expiration;
 		document.getElementById("dateexpiration").value=snapshot.val().expiration;
->>>>>>> Vic522
 		});
 		}); 
 		});
@@ -767,7 +747,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 	</script>
-=======
                         <script>
 
 
@@ -796,7 +775,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
                         </script>	
->>>>>>> ken519
                     </div>
                 </div>
                 <a href="#library" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext" style="font-size:24px">Plus Icon</a>
@@ -896,7 +874,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                 </div>
             </form>
         </div>
-<<<<<<< HEAD
 		<script>
 			$(document).on("pagecreate", "#modify", function(){
                         $("#confirmmodification").on("click", function(){
@@ -1706,8 +1683,6 @@ document.getElementById("today_date").value = month + "/" + day + "/" + year;
 			</div>
 		  </div>
 </div> 
-<<<<<<< HEAD
-=======
 
         <!--Grace-->
         <div data-role="page" id="confirmPW">
@@ -2079,11 +2054,10 @@ document.getElementById("today_date").value = month + "/" + day + "/" + year;
                     </div>
                     <div data-role="collapsible">
                         <h4>Seafood</h4>
-                        <<<<<<< HEAD
+                        
                                    <ul id="seafoodul" data-role="listview" name="food_list">
 
                         <li data-icon="plus" id="seafoodadd"><a href="#">+</a></li>
-                        =======
                         <ul data-role="listview" name="food_list">
                             <li><a href="#">Salmon</a></li>
                             <li><a href="#">Tuna</a></li>
