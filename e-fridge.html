@@ -21,6 +21,7 @@
         <script src="js/jquery.ui.datepicker.js"></script>
         <script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
         <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="js/password.js"></script>
         <script>
             // Initialize Firebase
             var config = {
@@ -162,7 +163,7 @@
                 <div data-role="popup" id="popupMenu00">
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
                         <li><a onclick="return SignOut()">Log Out</a></li>
-                        <li><a href="#confirmPW">Change Password</a></li>
+                        <li><a onclick="return changePW()">Change Password</a></li>
                         <li><a href="#settings">Settings</a></li>
                         <li><a href="#affiliated">Affiliated App</a></li>
                         <li><a href="#contactUs">Contact Us</a></li>
@@ -193,7 +194,7 @@
                 <div data-role="popup" id="popupMenu0">
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
                         <li><a onclick="return SignOut()">Log Out</a></li>
-                        <li><a href="#confirmPW">Change Password</a></li>
+                        <li><a onclick="return changePW()">Change Password</a></li>
                         <li><a href="#settings">Settings</a></li>
                         <li><a href="#affiliated">Affiliated App</a></li>
                         <li><a href="#contactUs">Contact Us</a></li>
@@ -495,8 +496,8 @@
                 <a href="#popupMenu" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
                 <div data-role="popup" id="popupMenu">
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a href="log.html" rel="external">Log Out</a></li>
-                        <li><a href="#confirmPW">Change Password</a></li>
+                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+                        <li><a onclick="return changePW()">Change Password</a></li>
                         <li><a href="#settings">Settings</a></li>
                         <li><a href="#affiliated">Affiliated App</a></li>
                         <li><a href="#contactUs">Contact Us</a></li>
@@ -539,8 +540,8 @@
                 <a href="#popupMenu2" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
                 <div data-role="popup" id="popupMenu2">
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a href="log.html" rel="external">Log Out</a></li>
-                        <li><a href="#confirmPW" rel="external">Change Password</a></li>
+                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+                        <li><a onclick="return changePW()" rel="external">Change Password</a></li>
                         <li><a href="#settings" rel="external">Settings</a></li>
                         <li><a href="#affiliated" rel="external">Affiliated App</a></li>
                         <li><a href="#contactUs" rel="external">Contact Us</a></li>
@@ -562,7 +563,7 @@
                     </form>
 
                     <form>
-                        <input type="submit" value="Confirm" data-inline="true">
+                        <input type="submit" onclick="changePW()" value="Confirm" data-inline="true">
                     </form>
                 </div>
             </div>
@@ -584,8 +585,8 @@
                 <a href="#popupMenu3" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
                 <div data-role="popup" id="popupMenu3">
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a href="log.html" rel="external">Log Out</a></li>
-                        <li><a href="#confirmPW" rel="external">Change Password</a></li>
+                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+                        <li><a onclick="return changePW()" rel="external">Change Password</a></li>
                         <li><a href="#settings" rel="external">Settings</a></li>
                         <li><a href="#affiliated" rel="external">Affiliated App</a></li>
                         <li><a href="#contactUs" rel="external">Contact Us</a></li>
@@ -636,8 +637,8 @@
                 <a href="#popupMenu4" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
                 <div data-role="popup" id="popupMenu4">
                     <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                        <li><a href="log.html" rel="external">Log Out</a></li>
-                        <li><a href="#confirmPW" rel="external">Change Password</a></li>
+                        <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+                        <li><a onclick="return changePW()" rel="external">Change Password</a></li>
                         <li><a href="#settings" rel="external">Settings</a></li>
                         <li><a href="#affiliated" rel="external">Affiliated App</a></li>
                         <li><a href="#contactUs" rel="external">Contact Us</a></li>
@@ -708,8 +709,8 @@
                     <a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
                     <div data-role="popup" id="popupMenu6">
                         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                            <li><a href="log.html" rel="external">Log Out</a></li>
-                            <li><a href="#confirmPW">Change Password</a></li>
+                            <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+                            <li><a onclick="return changePW()">Change Password</a></li>
                             <li><a href="#affiliated">Affiliated App</a></li>
                             <li><a href="#settings">Settings</a></li>
                             <li><a href="#contactUs">Contact Us</a></li>
@@ -756,8 +757,8 @@
                     <a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
                     <div data-role="popup" id="popupMenu5">
                         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                            <li><a href="log.html" rel="external">Log Out</a></li>
-                            <li><a href="#confirmPW">Change Password</a></li>
+                            <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+                            <li><a onclick="return changePW()">Change Password</a></li>
                             <li><a href="#settings">Settings</a></li>
                             <li><a href="#affiliated">Affiliated App</a></li>
                             <li><a href="#contactUs">Contact Us</a></li>
@@ -1152,8 +1153,8 @@
                     <a href="#popupMenu7" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
                     <div data-role="popup" id="popupMenu7">
                         <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                            <li><a href="log.html" rel="external">Log Out</a></li>
-                            <li><a href="#confirmPW">Change Password</a></li>
+                            <li><a onclick="return SignOut()" rel="external">Log Out</a></li>
+                            <li><a onclick="return changePW()">Change Password</a></li>
                             <li><a href="#settings">Settings</a></li>
                             <li><a href="#affiliated">Affiliated App</a></li>
                             <li><a href="#contactUs">Contact Us</a></li>
