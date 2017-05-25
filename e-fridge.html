@@ -15,11 +15,13 @@
         <script src="js/jquery.mobile.subpage.js"></script>
 		<script src="js/jquery.ui.datepicker.js"></script>
 		<script id="mobile-datepicker" src="js/jquery.mobile.datepicker.js"></script>
-		<script type="text/javascript" src="js/jquery.e-calendar.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
 
+		<script type="text/javascript" src="js/index.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+        <script src="js/login.js"></script>
 <!-- link to firebase  -->
 <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+		<script type="text/javascript" src="js/jquery.e-calendar.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -92,13 +94,30 @@
 	//  });
 
 
+var eventlist=new Array();
+
+firebase.auth().onAuthStateChanged(function(user) {
+
+
+
+
+	var userid = user.uid;
+	var userlist = userid + "list";
+    firebase.database().ref(userlist).on('child_added', function(snapshot) {
+
+  
+teststring=snapshot.key + snapshot.val().expiration;
+	
+	eventlist.push(teststring);
+});
+});
+
 
 
 
 </script>
 
-        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-        <script src="js/login.js"></script>
+
 
         <style>
             div #content.ui-content{ background: none }      
@@ -181,7 +200,7 @@
 						</ul>
 					</div>
             </div>
-            <div data-role="content" id="content">
+            <div data-role="content" id="content0">
 
                 <a href="#library" class="ui-btn">+</a>
 
@@ -224,25 +243,25 @@
 										
 firebase.auth().onAuthStateChanged(function(user) {
 
-    console.log(user.uid)// User is signed in.
+
 
 
 
 	var userid = user.uid;
 	var userlist = userid + "list";
 	
-	console.log(userlist);
-	let i=0;
+
+
 	var navlist=document.getElementById("meatlistul");
-	var myArray1ist=new Array();
+
 	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Meat').on("value", function(snapshot) {
 	var packJsonlist = snapshot.val();
 	
 	for (var p in packJsonlist) {
 	ref.child(p).on('value', function(snapshot){
-	myArray1ist[i]=snapshot.key;
-	var newTextlist=document.createTextNode(myArray1ist[i]);
+	var myArray1ist=snapshot.key;
+	var newTextlist=document.createTextNode(myArray1ist);
 	var newLinklist=document.createElement('a');
 	var newChildlist=document.createElement('li');
 	newLinklist.appendChild(newTextlist);  
@@ -275,16 +294,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 	var uid = user.uid;
 	var userlist = uid + "list";
-	i=0;
 	var navlist2=document.getElementById("vegetablelistul");
-	var myArray1ist2=new Array();
 	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Vegetable').once("value", function(snapshot) {
 	var packJsonlist2 = snapshot.val();
 	for (var p in packJsonlist2) {
 	ref.child(p).once('value', function(snapshot){
-	myArray1ist2[i]=snapshot.key;
-	var newTextlist2=document.createTextNode(myArray1ist2[i]);
+	var myArray1ist2=snapshot.key;
+	var newTextlist2=document.createTextNode(myArray1ist2);
 	var newLinklist2=document.createElement('a');
 	var newChildlist2=document.createElement('li');
 	newLinklist2.appendChild(newTextlist2);  
@@ -314,16 +331,16 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 	var uid = user.uid;
 	var userlist = uid + "list";
-	i=0;
+
 	var navlist3=document.getElementById("seafoodlistul");
-	var myArray1ist3=new Array();
+
 	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Seafood').once("value", function(snapshot) {
 	var packJsonlist3 = snapshot.val();
 	for (var p in packJsonlist3) {
 	ref.child(p).once('value', function(snapshot){
-	myArray1ist3[i]=snapshot.key;
-	var newTextlist3=document.createTextNode(myArray1ist3[i]);
+	var myArray1ist3=snapshot.key;
+	var newTextlist3=document.createTextNode(myArray1ist3);
 	var newLinklist3=document.createElement('a');
 	var newChildlist3=document.createElement('li');
 	newLinklist3.appendChild(newTextlist3);  
@@ -352,16 +369,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 	var uid = user.uid;
 	var userlist = uid + "list";
-	i=0;
 	var navlist4=document.getElementById("fruitlistul");
-	var myArray1ist4=new Array();
 	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
 	var packJsonlist4 = snapshot.val();
 	for (var p in packJsonlist4) {
 	ref.child(p).once('value', function(snapshot){
-	myArray1ist4[i]=snapshot.key;
-	var newTextlist4=document.createTextNode(myArray1ist4[i]);
+	myArray1ist4=snapshot.key;
+	var newTextlist4=document.createTextNode(myArray1ist4);
 	var newLinklist4=document.createElement('a');
 	var newChildlist4=document.createElement('li');
 	newLinklist4.appendChild(newTextlist4);  
@@ -391,16 +406,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 	var uid = user.uid;
 	var userlist = uid + "list";
-	i=0;
 	var navlist5=document.getElementById("dairylistul");
-	var myArray1ist5=new Array();
 	var ref = firebase.database().ref(userlist);
 	ref.orderByChild("group").equalTo('Dairy').once("value", function(snapshot) {
 	var packJsonlist5 = snapshot.val();
 	for (var p in packJsonlist5) {
 	ref.child(p).once('value', function(snapshot){
-	myArray1ist5[i]=snapshot.key;
-	var newTextlist5=document.createTextNode(myArray1ist5[i]);
+	myArray1ist5=snapshot.key;
+	var newTextlist5=document.createTextNode(myArray1ist5);
 	var newLinklist5=document.createElement('a');
 	var newChildlist5=document.createElement('li');
 	newLinklist5.appendChild(newTextlist5);  
@@ -428,7 +441,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 	var uid = user.uid;
 	var userlist = uid + "list";
-	i=0;
 	var navlist6=document.getElementById("otherslistul");
 	var myArray1ist6=new Array();
 	var ref = firebase.database().ref(userlist);
@@ -436,8 +448,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 	var packJsonlist6 = snapshot.val();
 	for (var p in packJsonlist6) {
 	ref.child(p).once('value', function(snapshot){
-	myArray1ist6[i]=snapshot.key;
-	var newTextlist6=document.createTextNode(myArray1ist6[i]);
+	myArray1ist6=snapshot.key;
+	var newTextlist6=document.createTextNode(myArray1ist6);
 	var newLinklist6=document.createElement('a');
 	var newChildlist6=document.createElement('li');
 	newLinklist6.appendChild(newTextlist6);  
@@ -466,7 +478,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		
 		
 		$(document).on("pageshow","#listpage",function(){
-		$("li").on("click",function(){
+		$("li").on("tap",function(){
 		iteminfo_name = $(this).text();
 		document.getElementById("foodinfo").innerHTML = iteminfo_name;
 		document.getElementById("foodinfomodify").innerHTML=iteminfo_name;
@@ -801,7 +813,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 		<h1>Affiliated App</h1>
 		<div class="ui-btn-right">
 		<a href="#popupMenu5" data-rel="popup" data-role="button" data-native-menu="false" data-mini="true" data-inline="true" data-transition="slidedown" data-icon="gear" data-iconpos="notext"></a>
-				<div data-role="popup" id="popupMenu6">
+				<div data-role="popup" id="popupMenu5">
 					<ul data-role="listview" data-inset="true" style="min-width:210px;">
 						<li><a href="log.html" rel="external">Log Out</a></li>
 						<li><a href="#confirmPW">Change Password</a></li>
@@ -887,17 +899,16 @@ document.getElementById("group_name_new").innerHTML = "Meat";
 
 
 	var userid = user.uid; 
-	i=0;
+
 	var nav=document.getElementById("meatul");
 	var plus=document.getElementById("meatadd");
-	let myArray=new Array();
 	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Meat').once("value", function(snapshot) {
 	var packJson = snapshot.val();
 	for (var p in packJson) {
 	ref.child(p).once('value', function(snapshot){
-	myArray[i]=snapshot.key;
-	var newText=document.createTextNode(myArray[i]);
+	myArray=snapshot.key;
+	var newText=document.createTextNode(myArray);
 	var newLink=document.createElement('a');
 	var newChild=document.createElement('li');
 	newLink.appendChild(newText);  
@@ -934,17 +945,15 @@ document.getElementById("group_name_new").innerHTML = "Vegetable";
 
  firebase.auth().onAuthStateChanged(function(user) {  
 	var userid = user.uid; 
-	i=0;
 	var nav2=document.getElementById("vegetableul");
 	var plus2=document.getElementById("vegetableadd");
-	let myArray2=new Array();
 	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Vegetable').once("value", function(snapshot) {
 	var packJson2 = snapshot.val();
 	for (var p in packJson2) {
 	ref.child(p).once('value', function(snapshot){
-	myArray2[i]=snapshot.key;
-	var newText2=document.createTextNode(myArray2[i]);
+	myArray2=snapshot.key;
+	var newText2=document.createTextNode(myArray2);
 	var newLink2=document.createElement('a');
 	var newChild2=document.createElement('li');
 	newLink2.appendChild(newText2);  
@@ -981,17 +990,15 @@ document.getElementById("group_name_new").innerHTML = "Seafood";
   
 firebase.auth().onAuthStateChanged(function(user) {  
 	var userid = user.uid; 
-	i=0;
 	var nav3=document.getElementById("seafoodul");
 	var plus3=document.getElementById("seafoodadd");
-	let myArray3=new Array();
 	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Seafood').once("value", function(snapshot) {
 	var packJson3 = snapshot.val();
 	for (var p in packJson3) {
 	ref.child(p).once('value', function(snapshot){
-	myArray3[i]=snapshot.key;
-	var newText3=document.createTextNode(myArray3[i]);
+	myArray3=snapshot.key;
+	var newText3=document.createTextNode(myArray3);
 	var newLink3=document.createElement('a');
 	var newChild3=document.createElement('li');
 	newLink3.appendChild(newText3);  
@@ -1026,17 +1033,15 @@ document.getElementById("group_name_new").innerHTML = "Fruit";
   
 firebase.auth().onAuthStateChanged(function(user) {  
 	var userid = user.uid; 
-	i=0;
 	var nav4=document.getElementById("fruitul");
 	var plus4=document.getElementById("fruitadd");
-	let myArray4=new Array();
 	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Fruit').once("value", function(snapshot) {
 	var packJson4 = snapshot.val();
 	for (var p in packJson4) {
 	ref.child(p).once('value', function(snapshot){
-	myArray4[i]=snapshot.key;
-	var newText4=document.createTextNode(myArray4[i]);
+	myArray4=snapshot.key;
+	var newText4=document.createTextNode(myArray4);
 	var newLink4=document.createElement('a');
 	var newChild4=document.createElement('li');
 	newLink4.appendChild(newText4);  
@@ -1071,17 +1076,15 @@ document.getElementById("group_name_new").innerHTML = "Dairy";
   
 firebase.auth().onAuthStateChanged(function(user) {  
 	var userid = user.uid; 
-	i=0;
 	var nav5=document.getElementById("dairyul");
 	var plus5=document.getElementById("dairyadd");
-	let myArray5=new Array();
 	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('Dairy').once("value", function(snapshot) {
 	var packJson5 = snapshot.val();
 	for (var p in packJson5) {
 	ref.child(p).once('value', function(snapshot){
-	myArray5[i]=snapshot.key;
-	var newText5=document.createTextNode(myArray5[i]);
+	myArray5=snapshot.key;
+	var newText5=document.createTextNode(myArray5);
 	var newLink5=document.createElement('a');
 	var newChild5=document.createElement('li');
 	newLink5.appendChild(newText5);  
@@ -1116,17 +1119,15 @@ document.getElementById("group_name_new").innerHTML = "Others";
   
 firebase.auth().onAuthStateChanged(function(user) {  
 	var userid = user.uid; 
-	i=0;
 	var nav6=document.getElementById("othersul");
 	var plus6=document.getElementById("othersadd");
-	let myArray6=new Array();
 	var ref = firebase.database().ref(userid);
 	ref.orderByChild("group").equalTo('others').once("value", function(snapshot) {
 	var packJson6 = snapshot.val();
 	for (var p in packJson6) {
 	ref.child(p).once('value', function(snapshot){
-	myArray6[i]=snapshot.key;
-	var newText6=document.createTextNode(myArray6[i]);
+	myArray6=snapshot.key;
+	var newText6=document.createTextNode(myArray6);
 	var newLink6=document.createElement('a');
 	var newChild6=document.createElement('li');
 	newLink6.appendChild(newText6);  
@@ -1264,7 +1265,7 @@ document.getElementById("today_date").value = month + "/" + day + "/" + year;
 	expirationd.setMonth(setM);	
 	expirationd.setYear(setY);	
 	};
-		if (datestring.length==10) {
+	if (datestring.length==10) {
 	var setM=datestring.substring(0,2);
 	var setD=datestring.substring(3,5);
 	var setY=datestring.substring(6);
@@ -1278,7 +1279,7 @@ document.getElementById("today_date").value = month + "/" + day + "/" + year;
 	var emonth=expirationd.getMonth();
 	var eyear=expirationd.getFullYear();
 	expirations= emonth + "/" + eday + "/" + eyear;
-	console.log(group_name);
+
 		    firebase.database().ref(userlist).child($("#item_input").val()).update({
 
 
@@ -1398,5 +1399,7 @@ document.getElementById("today_date").value = month + "/" + day + "/" + year;
 			</div>
 		  </div>
 </div> 
+
+
     </body>
 </html>
