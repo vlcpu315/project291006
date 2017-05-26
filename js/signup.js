@@ -32,6 +32,12 @@ function SignUp(){
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
-        window.location="e-fridge.html";
+		
+	var uid=firebaseUser.uid;
+	firebase.database().ref('lib').once('value', function(snapshot) {
+	firebase.database().ref().child(uid).set(snapshot.val());
+	window.location="e-fridge.html";
+	});
     }
 });
+
